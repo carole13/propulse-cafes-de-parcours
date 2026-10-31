@@ -6,6 +6,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import type { Database } from "@/integrations/supabase/types";
+import { mergeEvents, upcomingExternalEvents } from "./external-events";
 
 function publicClient() {
   const key = process.env["SUPABASE_PUBLISHABLE_KEY"]!;
@@ -52,18 +53,15 @@ export type ArticleListItem = {
 };
 export type Article = ArticleListItem & { content: string | null };
 
-/** Upcoming published events, chronological. */
+/** Upcoming published events (database + weekly watch file), chronological. */
 export const listUpcomingEvents = createServerFn({ method: "GET" }).handler(async () => {
   const { data, error } = await publicClient()
     .from("events")
     .select(EVENT_COLUMNS)
     .gte("start_at", new Date().toISOString())
     .order("start_at", { ascending: true });
-  if (error) {
-    console.error("listUpcomingEvents", error);
-    return [] as EventRow[];
-  }
-  return (data ?? []) as EventRow[];
+  if (error) console.error("listUpcomingEvents", error);
+  return mergeEvents((data ?? []) as EventRow[], upcomingExternalEvents());
 });
 
 /** Next upcoming Pro'pulse circle (or null). */
