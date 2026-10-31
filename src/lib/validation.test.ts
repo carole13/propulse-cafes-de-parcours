@@ -21,7 +21,7 @@ describe("registration rules", () => {
     (email) => {
       const r = registrationSchema.safeParse({ ...base, email });
       expect(r.success).toBe(false);
-      if (!r.success) expect(r.error.issues[0].message).toBe(ACADEMIC_EMAIL_MESSAGE);
+      if (!r.success) expect(r.error.issues[0]?.message).toBe(ACADEMIC_EMAIL_MESSAGE);
     },
   );
 

@@ -26,7 +26,7 @@ export function ContactForm() {
       const errs: Record<string, string> = {};
       for (const i of parsed.error.issues) errs[String(i.path[0])] ??= i.message;
       setErrors(errs);
-      if (errs.turnstileToken) setFormError(errs.turnstileToken);
+      if (errs["turnstileToken"]) setFormError(errs["turnstileToken"]);
       return;
     }
     setErrors({});
@@ -61,11 +61,11 @@ export function ContactForm() {
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-5 rounded-2xl bg-brand-white p-6 md:p-8">
       <div className="grid gap-5 sm:grid-cols-2">
-        <TextField id="name" label="Nom" autoComplete="name" required value={v.name} onChange={(e) => setV({ ...v, name: e.target.value })} error={errors.name} maxLength={120} />
-        <TextField id="contact-email" type="email" label="Email" autoComplete="email" required value={v.email} onChange={(e) => setV({ ...v, email: e.target.value })} error={errors.email} maxLength={255} />
+        <TextField id="name" label="Nom" autoComplete="name" required value={v.name} onChange={(e) => setV({ ...v, name: e.target.value })} error={errors["name"]} maxLength={120} />
+        <TextField id="contact-email" type="email" label="Email" autoComplete="email" required value={v.email} onChange={(e) => setV({ ...v, email: e.target.value })} error={errors["email"]} maxLength={255} />
       </div>
-      <TextField id="companyRole" label="Entreprise / poste" autoComplete="organization-title" required value={v.companyRole} onChange={(e) => setV({ ...v, companyRole: e.target.value })} error={errors.companyRole} maxLength={160} />
-      <TextAreaField id="message" label="Message" required maxLength={2000} rows={5} value={v.message} onChange={(e) => setV({ ...v, message: e.target.value })} error={errors.message} />
+      <TextField id="companyRole" label="Entreprise / poste" autoComplete="organization-title" required value={v.companyRole} onChange={(e) => setV({ ...v, companyRole: e.target.value })} error={errors["companyRole"]} maxLength={160} />
+      <TextAreaField id="message" label="Message" required maxLength={2000} rows={5} value={v.message} onChange={(e) => setV({ ...v, message: e.target.value })} error={errors["message"]} />
       <Turnstile key={widgetKey} onToken={setToken} />
       {formError && <p role="alert" className="rounded-2xl bg-brand-mist p-4 text-sm font-semibold text-destructive">{formError}</p>}
       <Button type="submit" size="lg" disabled={pending} className="w-full sm:w-auto">

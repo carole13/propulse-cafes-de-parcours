@@ -6,6 +6,6 @@ export const nextCircleQuery = queryOptions({ queryKey: ["events", "next-circle"
 export const circleQuery = (id: string) =>
   queryOptions({ queryKey: ["events", "circle", id], queryFn: () => getCircle({ data: { id } }) });
 export const articlesQuery = (limit?: number) =>
-  queryOptions({ queryKey: ["articles", limit ?? "all"], queryFn: () => listArticles({ data: { limit } }) });
+  queryOptions({ queryKey: ["articles", limit ?? "all"], queryFn: () => listArticles({ data: limit ? { limit } : {} }) });
 export const articleQuery = (slug: string) =>
   queryOptions({ queryKey: ["articles", "slug", slug], queryFn: () => getArticle({ data: { slug } }) });
