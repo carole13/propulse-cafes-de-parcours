@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "id": "salon-letudiant-journalisme-communication-marketing-paris-2026",
+    "title": "Salon de l'Étudiant journalisme, marketing et communication",
+    "description": "Salon des formations en journalisme, communication et marketing : stands d'écoles et d'universités, conférences gratuites, échanges avec des professionnels et des anciens élèves.",
+    "start_at": "2026-11-07T10:00:00+01:00",
+    "location": "NEWCAP Event Center, 3 quai de Grenelle, 75015 Paris",
+    "sector": "Communication",
+    "external_url": "https://salon-journalisme-communication-marketing-paris.salon.letudiant.fr/",
+    "price": "Gratuit, invitation nominative obligatoire",
+    "why": "Pour comparer les masters et écoles de communication et de journalisme en une journée, et écouter des pros et des anciens élèves raconter leurs parcours (10h-18h).",
+    "source": "https://salon-journalisme-communication-marketing-paris.salon.letudiant.fr/"
+  },
+  {
+    "id": "npdj-sciences-po-2026",
+    "title": "Les Nouvelles Pratiques du Journalisme (#NPDJ) 2026",
+    "description": "18e édition organisée par l'École de journalisme de Sciences Po, sur le thème « Ingérences et intégrité informationnelle » : deux tables rondes puis un cocktail.",
+    "start_at": "2026-11-18T18:00:00+01:00",
+    "location": "Amphithéâtre Jean Moulin, Sciences Po, 13 rue de l'Université, 75007 Paris",
+    "sector": "Journalisme / Médias",
+    "external_url": "https://www.sciencespo.fr/en/events/npdj-les-nouvelles-pratiques-du-journalisme-2026/",
+    "price": "Gratuit, inscription préalable obligatoire (Eventbrite)",
+    "why": "Une soirée pour entendre des journalistes et experts parler désinformation et vérification de l'information, et réseauter au cocktail (18h-21h30).",
+    "source": "https://www.sciencespo.fr/en/events/npdj-les-nouvelles-pratiques-du-journalisme-2026/"
+  },
+  {
+    "id": "salon-letudiant-masters-ms-mba-paris-2027",
+    "title": "Salon de l'Étudiant masters, mastères spécialisés et MBA",
+    "description": "Salon de la poursuite d'études à bac+5 : universités et écoles présentent leurs masters, mastères spécialisés et MBA, dont des programmes en communication.",
+    "start_at": "2027-01-16T09:00:00+01:00",
+    "location": "Paris (adresse à confirmer sur le site de L'Étudiant)",
+    "sector": "Orientation / Masters",
+    "external_url": "https://www.letudiant.fr/etudes/salons/ville-paris.html",
+    "price": "Gratuit sur inscription",
+    "why": "Pour les étudiants de licence qui cherchent leur master en communication. Heure et adresse non publiées pour l'instant : 09:00 est une valeur par défaut.",
+    "source": "https://www.letudiant.fr/etudes/salons/ville-paris.html"
+  }
+]
