@@ -33,7 +33,7 @@ export function RegistrationForm({ eventId, onFull }: { eventId: string; onFull?
       const errs: Errors = {};
       for (const issue of parsed.error.issues) errs[String(issue.path[0])] ??= issue.message;
       setErrors(errs);
-      if (errs.turnstileToken) setFormError(errs.turnstileToken);
+      if (errs["turnstileToken"]) setFormError(errs["turnstileToken"]);
       return;
     }
     setErrors({});
@@ -71,8 +71,8 @@ export function RegistrationForm({ eventId, onFull }: { eventId: string; onFull?
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-5" aria-describedby={formError ? "form-error" : undefined}>
       <div className="grid gap-5 sm:grid-cols-2">
-        <TextField id="firstName" label="Prénom" autoComplete="given-name" required value={values.firstName} onChange={(e) => set("firstName", e.target.value)} error={errors.firstName} maxLength={80} />
-        <TextField id="lastName" label="Nom" autoComplete="family-name" required value={values.lastName} onChange={(e) => set("lastName", e.target.value)} error={errors.lastName} maxLength={80} />
+        <TextField id="firstName" label="Prénom" autoComplete="given-name" required value={values.firstName} onChange={(e) => set("firstName", e.target.value)} error={errors["firstName"]} maxLength={80} />
+        <TextField id="lastName" label="Nom" autoComplete="family-name" required value={values.lastName} onChange={(e) => set("lastName", e.target.value)} error={errors["lastName"]} maxLength={80} />
       </div>
       <TextField
         id="email"
@@ -85,11 +85,11 @@ export function RegistrationForm({ eventId, onFull }: { eventId: string; onFull?
         hint="Ton adresse fournie par ton école ou ton université."
         value={values.email}
         onChange={(e) => set("email", e.target.value)}
-        error={errors.email}
+        error={errors["email"]}
         maxLength={255}
       />
-      <TextAreaField id="motivation" label="Pourquoi ce cercle t'intéresse ?" required maxLength={500} value={values.motivation} onChange={(e) => set("motivation", e.target.value)} error={errors.motivation} />
-      <TextAreaField id="questions" label="Quelles questions aimerais-tu poser à l'intervenant·e ?" optional maxLength={1000} value={values.questions} onChange={(e) => set("questions", e.target.value)} error={errors.questions} />
+      <TextAreaField id="motivation" label="Pourquoi ce cercle t'intéresse ?" required maxLength={500} value={values.motivation} onChange={(e) => set("motivation", e.target.value)} error={errors["motivation"]} />
+      <TextAreaField id="questions" label="Quelles questions aimerais-tu poser à l'intervenant·e ?" optional maxLength={1000} value={values.questions} onChange={(e) => set("questions", e.target.value)} error={errors["questions"]} />
 
       <div className="space-y-1.5">
         <label htmlFor="consent" className="flex cursor-pointer items-start gap-3 text-sm">
@@ -99,8 +99,8 @@ export function RegistrationForm({ eventId, onFull }: { eventId: string; onFull?
             required
             checked={values.consent}
             onChange={(e) => set("consent", e.target.checked)}
-            aria-invalid={!!errors.consent}
-            aria-describedby={errors.consent ? "consent-error" : undefined}
+            aria-invalid={!!errors["consent"]}
+            aria-describedby={errors["consent"] ? "consent-error" : undefined}
             className="mt-0.5 size-5 shrink-0 accent-brand-blue"
           />
           <span>
@@ -108,7 +108,7 @@ export function RegistrationForm({ eventId, onFull }: { eventId: string; onFull?
             <Link to="/confidentialite" className="font-bold underline underline-offset-2">Politique de confidentialité</Link>
           </span>
         </label>
-        {errors.consent && <p id="consent-error" className="text-sm font-semibold text-destructive">{errors.consent}</p>}
+        {errors["consent"] && <p id="consent-error" className="text-sm font-semibold text-destructive">{errors["consent"]}</p>}
       </div>
 
       <Turnstile key={widgetKey} onToken={setToken} />

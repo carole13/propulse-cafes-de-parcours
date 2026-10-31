@@ -12,7 +12,7 @@ export const INSTAGRAM_HANDLE = "@propulse_students";
  * The SECRET key lives only on the server (TURNSTILE_SECRET_KEY).
  */
 export const TURNSTILE_SITE_KEY: string =
-  (import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined) || "1x00000000000000000000AA";
+  (import.meta.env["VITE_TURNSTILE_SITE_KEY"] as string | undefined) || "1x00000000000000000000AA";
 
 export const ARTICLE_CATEGORIES = {
   interview: "Interview",

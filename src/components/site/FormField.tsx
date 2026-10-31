@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 const fieldClass =
   "w-full rounded-2xl border-2 border-input bg-brand-white px-4 py-3 text-base text-brand-blue placeholder:text-brand-ink/60 focus:border-brand-blue focus:outline-none";
 
-type Common = { id: string; label: string; error?: string; optional?: boolean; hint?: string };
+type Common = { id: string; label: string; error?: string | undefined; optional?: boolean; hint?: string };
 
 export function TextField({ id, label, error, optional, hint, className, ...rest }: Common & InputHTMLAttributes<HTMLInputElement>) {
   return (
