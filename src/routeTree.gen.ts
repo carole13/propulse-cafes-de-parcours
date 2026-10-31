@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as AgendaIndexRouteImport } from './routes/agenda.index'
 import { Route as AgendaIdRouteImport } from './routes/agenda.$id'
 import { Route as ParcoursIndexRouteImport } from './routes/parcours.index'
@@ -24,6 +26,16 @@ const IndexRoute = IndexRouteImport.update({
 const AProposRoute = AProposRouteImport.update({
   id: '/a-propos',
   path: '/a-propos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfidentialiteRoute = ConfidentialiteRouteImport.update({
+  id: '/confidentialite',
+  path: '/confidentialite',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AgendaIndexRoute = AgendaIndexRouteImport.update({
@@ -50,6 +62,8 @@ const ParcoursSlugRoute = ParcoursSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
+  '/confidentialite': typeof ConfidentialiteRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/agenda/$id': typeof AgendaIdRoute
   '/parcours/$slug': typeof ParcoursSlugRoute
   '/agenda/': typeof AgendaIndexRoute
@@ -58,6 +72,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
+  '/confidentialite': typeof ConfidentialiteRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/agenda/$id': typeof AgendaIdRoute
   '/parcours/$slug': typeof ParcoursSlugRoute
   '/agenda': typeof AgendaIndexRoute
@@ -67,6 +83,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
+  '/confidentialite': typeof ConfidentialiteRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/agenda/$id': typeof AgendaIdRoute
   '/parcours/$slug': typeof ParcoursSlugRoute
   '/agenda/': typeof AgendaIndexRoute
@@ -77,6 +95,8 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/a-propos'
+    | '/confidentialite'
+    | '/mentions-legales'
     | '/agenda/$id'
     | '/parcours/$slug'
     | '/agenda/'
@@ -85,6 +105,8 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/a-propos'
+    | '/confidentialite'
+    | '/mentions-legales'
     | '/agenda/$id'
     | '/parcours/$slug'
     | '/agenda'
@@ -93,6 +115,8 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/a-propos'
+    | '/confidentialite'
+    | '/mentions-legales'
     | '/agenda/$id'
     | '/parcours/$slug'
     | '/agenda/'
@@ -102,6 +126,8 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AProposRoute: typeof AProposRoute
+  ConfidentialiteRoute: typeof ConfidentialiteRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
   AgendaIdRoute: typeof AgendaIdRoute
   ParcoursSlugRoute: typeof ParcoursSlugRoute
   AgendaIndexRoute: typeof AgendaIndexRoute
@@ -122,6 +148,20 @@ declare module '@tanstack/react-router' {
       path: '/a-propos'
       fullPath: '/a-propos'
       preLoaderRoute: typeof AProposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/confidentialite': {
+      id: '/confidentialite'
+      path: '/confidentialite'
+      fullPath: '/confidentialite'
+      preLoaderRoute: typeof ConfidentialiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/agenda/': {
@@ -158,6 +198,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AProposRoute: AProposRoute,
+  ConfidentialiteRoute: ConfidentialiteRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
   AgendaIdRoute: AgendaIdRoute,
   ParcoursSlugRoute: ParcoursSlugRoute,
   AgendaIndexRoute: AgendaIndexRoute,
