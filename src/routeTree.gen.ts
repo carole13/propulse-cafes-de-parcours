@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as AgendaIndexRouteImport } from './routes/agenda.index'
+import { Route as AgendaIdRouteImport } from './routes/agenda.$id'
+import { Route as ParcoursIndexRouteImport } from './routes/parcours.index'
+import { Route as ParcoursSlugRouteImport } from './routes/parcours.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgendaIndexRoute = AgendaIndexRouteImport.update({
+  id: '/agenda/',
+  path: '/agenda/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgendaIdRoute = AgendaIdRouteImport.update({
+  id: '/agenda/$id',
+  path: '/agenda/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParcoursIndexRoute = ParcoursIndexRouteImport.update({
+  id: '/parcours/',
+  path: '/parcours/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParcoursSlugRoute = ParcoursSlugRouteImport.update({
+  id: '/parcours/$slug',
+  path: '/parcours/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/agenda/$id': typeof AgendaIdRoute
+  '/parcours/$slug': typeof ParcoursSlugRoute
+  '/agenda/': typeof AgendaIndexRoute
+  '/parcours/': typeof ParcoursIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/agenda/$id': typeof AgendaIdRoute
+  '/parcours/$slug': typeof ParcoursSlugRoute
+  '/agenda': typeof AgendaIndexRoute
+  '/parcours': typeof ParcoursIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/agenda/$id': typeof AgendaIdRoute
+  '/parcours/$slug': typeof ParcoursSlugRoute
+  '/agenda/': typeof AgendaIndexRoute
+  '/parcours/': typeof ParcoursIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/a-propos'
+    | '/agenda/$id'
+    | '/parcours/$slug'
+    | '/agenda/'
+    | '/parcours/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/a-propos'
+    | '/agenda/$id'
+    | '/parcours/$slug'
+    | '/agenda'
+    | '/parcours'
+  id:
+    | '__root__'
+    | '/'
+    | '/a-propos'
+    | '/agenda/$id'
+    | '/parcours/$slug'
+    | '/agenda/'
+    | '/parcours/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AProposRoute: typeof AProposRoute
+  AgendaIdRoute: typeof AgendaIdRoute
+  ParcoursSlugRoute: typeof ParcoursSlugRoute
+  AgendaIndexRoute: typeof AgendaIndexRoute
+  ParcoursIndexRoute: typeof ParcoursIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/a-propos': {
+      id: '/a-propos'
+      path: '/a-propos'
+      fullPath: '/a-propos'
+      preLoaderRoute: typeof AProposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agenda/': {
+      id: '/agenda/'
+      path: '/agenda'
+      fullPath: '/agenda/'
+      preLoaderRoute: typeof AgendaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agenda/$id': {
+      id: '/agenda/$id'
+      path: '/agenda/$id'
+      fullPath: '/agenda/$id'
+      preLoaderRoute: typeof AgendaIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parcours/': {
+      id: '/parcours/'
+      path: '/parcours'
+      fullPath: '/parcours/'
+      preLoaderRoute: typeof ParcoursIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parcours/$slug': {
+      id: '/parcours/$slug'
+      path: '/parcours/$slug'
+      fullPath: '/parcours/$slug'
+      preLoaderRoute: typeof ParcoursSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AProposRoute: AProposRoute,
+  AgendaIdRoute: AgendaIdRoute,
+  ParcoursSlugRoute: ParcoursSlugRoute,
+  AgendaIndexRoute: AgendaIndexRoute,
+  ParcoursIndexRoute: ParcoursIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
