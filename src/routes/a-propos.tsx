@@ -72,7 +72,7 @@ function About() {
         <h2 className="mt-3 text-3xl md:text-4xl">Ce qu'on te promet</h2>
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {COMMITMENTS.map((c, i) => (
-            <li key={c.title} className="rounded-2xl bg-brand-mint p-6">
+            <li key={c.title} className="rounded-2xl bg-brand-mint p-6 text-brand-ink">
               <span className="text-sm font-extrabold">0{i + 1}</span>
               <h3 className="mt-2 text-xl">{c.title}</h3>
               <p className="mt-2">{c.text}</p>
@@ -82,7 +82,7 @@ function About() {
       </section>
 
       {/* Contact pros */}
-      <section id="contact" aria-labelledby="contact-title" className="scroll-mt-20 bg-brand-mint">
+      <section id="contact" aria-labelledby="contact-title" className="scroll-mt-20 bg-brand-mint text-brand-ink">
         <div className="container-page grid gap-10 py-16 md:py-24 lg:grid-cols-[1fr_1.3fr]">
           <div>
             <BrandSymbol kind="face" />

@@ -10,6 +10,8 @@
  * fuchsia #FF74D4, blanc, gris très clair.
  * Readability rules: blue text on yellow / mint / white; white or yellow on blue.
  * Never yellow on fuchsia, never white on mint.
+ * Contrast notes: blue on fuchsia is only 2.1:1 -> use brand-night on fuchsia.
+ * Blue on mint is 4.0:1 (OK for big titles only) -> small text on mint uses brand-ink.
  */
 
 @theme inline {
@@ -50,6 +52,7 @@
   --color-brand-white: var(--brand-white);
   --color-brand-mist: var(--brand-mist);
   --color-brand-ink: var(--brand-ink);
+  --color-brand-night: var(--brand-night);
 }
 
 :root {
@@ -62,6 +65,7 @@
   --brand-white: oklch(1 0 0);
   --brand-mist: oklch(0.975 0.006 270); /* gris très clair */
   --brand-ink: oklch(0.36 0.16 271); /* bleu foncé pour petits textes (AA) */
+  --brand-night: #1E2A80; /* bleu nuit : seul texte lisible sur fuchsia (5,1:1) */
 
   --background: var(--brand-white);
   --foreground: var(--brand-blue);

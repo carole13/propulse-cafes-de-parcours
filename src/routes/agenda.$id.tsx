@@ -73,7 +73,7 @@ function CirclePage() {
             </div>
           )}
           {event.speaker_name && (
-            <div className="rounded-2xl bg-brand-mint p-6 md:p-8">
+            <div className="rounded-2xl bg-brand-mint p-6 text-brand-ink md:p-8">
               <p className="text-sm font-bold uppercase tracking-wide">L'intervenant·e</p>
               <h2 className="mt-2 text-2xl">{event.speaker_name}</h2>
               {event.speaker_role && <p className="font-semibold">{event.speaker_role}</p>}

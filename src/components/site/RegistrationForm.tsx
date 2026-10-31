@@ -60,7 +60,7 @@ export function RegistrationForm({ eventId, onFull }: { eventId: string; onFull?
 
   if (done) {
     return (
-      <div role="status" className="flex flex-col items-start gap-4 rounded-2xl bg-brand-mint p-8">
+      <div role="status" className="flex flex-col items-start gap-4 rounded-2xl bg-brand-mint p-8 text-brand-ink">
         <BrandSymbol kind="face" />
         <h3 className="text-2xl">C'est noté !</h3>
         <p className="text-lg">On a hâte de te rencontrer. On t'envoie les détails pratiques avant le cercle.</p>

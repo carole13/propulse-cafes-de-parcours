@@ -44,10 +44,10 @@ export function BrandSymbol({ kind, className }: { kind: SymbolKind; className?:
   );
 }
 
-/** Fuchsia pill badge (labels like "Prochain cercle"). Blue text keeps AA contrast. */
+/** Fuchsia pill badge (labels like "Prochain cercle"). Night-blue text: brand blue is unreadable on fuchsia. */
 export function Badge({ children, tone = "fuchsia", className }: { children: ReactNode; tone?: "fuchsia" | "mint" | "yellow" | "blue"; className?: string }) {
   const tones = {
-    fuchsia: "bg-brand-fuchsia text-brand-blue",
+    fuchsia: "bg-brand-fuchsia text-brand-night",
     mint: "bg-brand-mint text-brand-blue",
     yellow: "bg-brand-yellow text-brand-blue",
     blue: "bg-brand-blue text-brand-white",

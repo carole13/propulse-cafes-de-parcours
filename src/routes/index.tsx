@@ -44,7 +44,7 @@ function Home() {
           <BrandSymbol kind="star" className="text-5xl text-brand-white md:text-6xl" />
           <h1 className="mt-10 max-w-4xl text-[2.6rem] leading-[1.05] md:text-7xl">
             Un parcours <span className="text-brand-yellow">atypique</span> peut te{" "}
-            <Emph className="text-brand-mint">propulser.</Emph>
+            <Emph className="text-brand-white">propulser.</Emph>
           </h1>
           <p className="mt-6 max-w-md text-lg text-brand-white/95 md:text-xl">
             Pas de case. Pas de CV parfait.
@@ -81,7 +81,7 @@ function Home() {
 
       {/* Values */}
       <section className={articles.length > 0 ? "" : "mt-16 md:mt-24"}>
-        <div className="bg-brand-mint">
+        <div className="bg-brand-mint text-brand-ink">
           <div className="container-page py-16 md:py-24">
             <BrandSymbol kind="hash" className="text-5xl text-brand-blue" />
             <h2 className="mt-6 max-w-3xl text-3xl md:text-5xl">
