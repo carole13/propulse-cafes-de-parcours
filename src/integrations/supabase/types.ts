@@ -14,13 +14,173 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      articles: {
+        Row: {
+          category: string
+          content: string | null
+          cover_image_url: string | null
+          excerpt: string | null
+          id: string
+          published: boolean
+          published_at: string | null
+          slug: string
+          title: string
+        }
+        Insert: {
+          category: string
+          content?: string | null
+          cover_image_url?: string | null
+          excerpt?: string | null
+          id?: string
+          published?: boolean
+          published_at?: string | null
+          slug: string
+          title: string
+        }
+        Update: {
+          category?: string
+          content?: string | null
+          cover_image_url?: string | null
+          excerpt?: string | null
+          id?: string
+          published?: boolean
+          published_at?: string | null
+          slug?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      contact_messages: {
+        Row: {
+          company_role: string | null
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+        }
+        Insert: {
+          company_role?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+        }
+        Update: {
+          company_role?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      events: {
+        Row: {
+          capacity: number | null
+          created_at: string
+          description: string | null
+          external_url: string | null
+          id: string
+          image_url: string | null
+          location: string | null
+          published: boolean
+          sector: string | null
+          speaker_bio: string | null
+          speaker_name: string | null
+          speaker_role: string | null
+          start_at: string
+          title: string
+          type: string
+        }
+        Insert: {
+          capacity?: number | null
+          created_at?: string
+          description?: string | null
+          external_url?: string | null
+          id?: string
+          image_url?: string | null
+          location?: string | null
+          published?: boolean
+          sector?: string | null
+          speaker_bio?: string | null
+          speaker_name?: string | null
+          speaker_role?: string | null
+          start_at: string
+          title: string
+          type: string
+        }
+        Update: {
+          capacity?: number | null
+          created_at?: string
+          description?: string | null
+          external_url?: string | null
+          id?: string
+          image_url?: string | null
+          location?: string | null
+          published?: boolean
+          sector?: string | null
+          speaker_bio?: string | null
+          speaker_name?: string | null
+          speaker_role?: string | null
+          start_at?: string
+          title?: string
+          type?: string
+        }
+        Relationships: []
+      }
+      registrations: {
+        Row: {
+          consent: boolean
+          created_at: string
+          email: string
+          event_id: string
+          first_name: string
+          id: string
+          last_name: string
+          motivation: string
+          questions: string | null
+        }
+        Insert: {
+          consent?: boolean
+          created_at?: string
+          email: string
+          event_id: string
+          first_name: string
+          id?: string
+          last_name: string
+          motivation: string
+          questions?: string | null
+        }
+        Update: {
+          consent?: boolean
+          created_at?: string
+          email?: string
+          event_id?: string
+          first_name?: string
+          id?: string
+          last_name?: string
+          motivation?: string
+          questions?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "registrations_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      remaining_seats: { Args: { _event_id: string }; Returns: number }
     }
     Enums: {
       [_ in never]: never
