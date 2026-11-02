@@ -24,6 +24,30 @@
     "source": "https://www.sciencespo.fr/en/events/npdj-les-nouvelles-pratiques-du-journalisme-2026/"
   },
   {
+    "id": "carrefour-rp-pub-2026",
+    "title": "Carrefour des RP & de la Pub",
+    "description": "2e édition, pendant la Semaine de la Communication : deux sessions (RP puis publicité) avec cas concrets, témoignages de jeunes professionnels et cocktail de networking.",
+    "start_at": "2026-11-24T17:15:00+01:00",
+    "location": "Auditorium WPP, 145-149 rue Anatole-France, 92300 Levallois-Perret",
+    "sector": "RP / Publicité",
+    "external_url": "https://federation-pub.fr/2026/10/19/le-carrefour-des-rp-et-de-la-pub-revient-le-24-novembre-2026/",
+    "price": "Inscription en ligne obligatoire ; prix non indiqué pour 2026 (gratuit en 2025)",
+    "why": "Conçu pour les étudiants (universités, IEP, écoles de com et de journalisme, BTS, IUT) : découvrir les métiers des RP (17h15-18h30) et de la pub (18h15-19h45), puis échanger avec des pros au cocktail.",
+    "source": "https://federation-pub.fr/2026/10/19/le-carrefour-des-rp-et-de-la-pub-revient-le-24-novembre-2026/"
+  },
+  {
+    "id": "jpo-celsa-2027",
+    "title": "Journée portes ouvertes du CELSA (licence et master)",
+    "description": "Portes ouvertes de l'école de communication et de journalisme de Sorbonne Université : présentation des licences et masters, échanges avec les équipes et les étudiants.",
+    "start_at": "2027-01-09T10:00:00+01:00",
+    "location": "CELSA, 77 rue de Villiers, 92200 Neuilly-sur-Seine",
+    "sector": "Orientation / Masters",
+    "external_url": "https://www.celsa.fr/salons-journees-dinformation/",
+    "price": "Gratuit",
+    "why": "Pour les étudiants de licence qui visent un master en communication, RP, marketing ou journalisme dans une école publique de référence (10h-18h).",
+    "source": "https://www.celsa.fr/salons-journees-dinformation/"
+  },
+  {
     "id": "salon-letudiant-masters-ms-mba-paris-2027",
     "title": "Salon de l'Étudiant masters, mastères spécialisés et MBA",
     "description": "Salon de la poursuite d'études à bac+5 : universités et écoles présentent leurs masters, mastères spécialisés et MBA, dont des programmes en communication.",
