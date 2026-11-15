@@ -6,6 +6,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { BrandSymbol, Emph } from "@/components/site/Brand";
 import { NextCircle } from "@/components/site/NextCircle";
 import { ArticleCard } from "@/components/site/ArticleCard";
+import { InstagramFeed } from "@/components/site/InstagramFeed";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -103,6 +104,9 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* Instagram — masqué tant que le flux n'est pas configuré */}
+      <InstagramFeed />
 
       {/* Pro CTA */}
       <section className="container-page py-16 md:py-24">
