@@ -3,8 +3,8 @@ export const BRAND_NAME = "Pro'pulse";
 export const SITE_TITLE = "Pro'pulse | Rencontres informelles entre étudiants et pros";
 export const SITE_DESCRIPTION =
   "Des cercles de rencontres informelles entre étudiants et professionnels, comme autour d'un café. Sans évaluation, sans compétition.";
-export const INSTAGRAM_URL = "https://instagram.com/propulse_students";
-export const INSTAGRAM_HANDLE = "@propulse_students";
+export const INSTAGRAM_URL = "https://www.instagram.com/propulse.students/";
+export const INSTAGRAM_HANDLE = "@propulse.students";
 
 /**
  * URL du flux JSON Behold qui alimente la section Instagram de l'accueil

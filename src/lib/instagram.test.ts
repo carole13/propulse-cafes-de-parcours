@@ -31,7 +31,7 @@ const carousel = {
 describe("fil Instagram", () => {
   it("lit le format actuel de Behold ({ posts })", () => {
     const posts = parseInstagramFeed({
-      username: "propulse_students",
+      username: "propulse.students",
       posts: [image, video, carousel],
     });
     expect(posts.map((p) => p.kind)).toEqual(["image", "video", "carousel"]);
