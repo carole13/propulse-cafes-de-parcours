@@ -11,7 +11,7 @@ export const INSTAGRAM_HANDLE = "@propulse_students";
  * (format https://feeds.behold.so/XXXXXXXX). Elle n'est pas secrète.
  * Laisser vide masque la section. Voir src/lib/instagram.ts.
  */
-export const INSTAGRAM_FEED_URL = "";
+export const INSTAGRAM_FEED_URL = "https://feeds.behold.so/d6GmrGXsqWXDCsxJPKgT";
 
 /**
  * Cloudflare Turnstile public site key (safe to ship in the front-end).
