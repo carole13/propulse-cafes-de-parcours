@@ -7,6 +7,10 @@ import { BrandSymbol, Emph } from "@/components/site/Brand";
 import { NextCircle } from "@/components/site/NextCircle";
 import { ArticleCard } from "@/components/site/ArticleCard";
 import { InstagramFeed } from "@/components/site/InstagramFeed";
+import { Marquee } from "@/components/site/Marquee";
+import type { CSSProperties } from "react";
+
+const delay = (ms: number) => ({ "--delay": `${ms}ms` }) as CSSProperties;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,20 +45,37 @@ function Home() {
     <>
       {/* Hero */}
       <section className="bg-brand-blue text-brand-white">
-        <div className="container-page relative pb-16 pt-12 md:pb-28 md:pt-20">
-          <BrandSymbol kind="star" className="text-5xl text-brand-white md:text-6xl" />
-          <h1 className="mt-10 max-w-4xl text-[2.6rem] leading-[1.05] md:text-7xl">
-            Un parcours <span className="text-brand-yellow">atypique</span> peut te{" "}
+        <div className="container-page relative overflow-hidden pb-16 pt-12 md:pb-28 md:pt-20">
+          {/* Symboles de la marque qui flottent (décoratifs) */}
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+            <span className="float absolute right-5 top-10 md:right-[10%] md:top-[16%]" style={delay(0)}>
+              <BrandSymbol kind="face" className="size-12 md:size-20 md:[&>span:first-child]:text-2xl" />
+            </span>
+            <span className="float absolute right-[30%] top-[48%] hidden md:block" style={delay(-2000)}>
+              <BrandSymbol kind="hash" className="text-8xl" />
+            </span>
+            <span className="float absolute bottom-[14%] right-[6%] hidden md:block" style={delay(-4000)}>
+              <BrandSymbol kind="tilde" className="text-9xl" />
+            </span>
+          </div>
+
+          <span className="rise relative inline-block" style={delay(0)}>
+            <BrandSymbol kind="star" className="spin-slow text-5xl text-brand-white md:text-6xl" />
+          </span>
+          <h1 className="rise relative mt-10 max-w-4xl text-[2.6rem] leading-[1.05] md:text-7xl" style={delay(120)}>
+            Un parcours <span className="underline-sweep text-brand-yellow">atypique</span> peut te{" "}
             <Emph className="text-brand-white">propulser.</Emph>
           </h1>
-          <p className="mt-6 max-w-md text-lg text-brand-white/95 md:text-xl">
+          <p className="rise relative mt-6 max-w-md text-lg text-brand-white/95 md:text-xl" style={delay(260)}>
             Pas de case. Pas de CV parfait.
             <br />
             Juste des gens qui se parlent.
           </p>
-          <a href="#prochain-cercle" className={buttonVariants({ variant: "yellow", size: "lg", className: "mt-10" })}>
-            Voir le prochain cercle
-          </a>
+          <div className="rise relative mt-10" style={delay(400)}>
+            <a href="#prochain-cercle" className={buttonVariants({ variant: "yellow", size: "lg" })}>
+              Voir le prochain cercle
+            </a>
+          </div>
         </div>
       </section>
 
@@ -74,7 +95,9 @@ function Home() {
           </div>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {articles.map((a) => (
-              <ArticleCard key={a.id} article={a} />
+              <div key={a.id} className="reveal">
+                <ArticleCard article={a} />
+              </div>
             ))}
           </div>
         </section>
@@ -82,10 +105,11 @@ function Home() {
 
       {/* Values */}
       <section className={articles.length > 0 ? "" : "mt-16 md:mt-24"}>
+        <Marquee />
         <div className="bg-brand-mint text-brand-ink">
           <div className="container-page py-16 md:py-24">
             <BrandSymbol kind="hash" className="text-5xl text-brand-blue" />
-            <h2 className="mt-6 max-w-3xl text-3xl md:text-5xl">
+            <h2 className="reveal mt-6 max-w-3xl text-3xl md:text-5xl">
               Ici, pas d'entretien.
               <br />
               Pas de pitch.
@@ -94,7 +118,7 @@ function Home() {
             </h2>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
               {VALUES.map((v) => (
-                <li key={v.title} className="rounded-2xl bg-brand-white p-6">
+                <li key={v.title} className="reveal rounded-2xl bg-brand-white p-6">
                   <BrandSymbol kind={v.symbol} className={v.symbol === "hash" ? "text-3xl text-brand-blue" : "text-3xl"} />
                   <h3 className="mt-4 text-xl">{v.title}</h3>
                   <p className="mt-2 text-brand-ink">{v.text}</p>
@@ -110,7 +134,7 @@ function Home() {
 
       {/* Pro CTA */}
       <section className="container-page py-16 md:py-24">
-        <div className="flex flex-col items-start gap-6 rounded-2xl bg-brand-blue p-8 text-brand-white md:flex-row md:items-center md:justify-between md:p-14">
+        <div className="reveal flex flex-col items-start gap-6 rounded-2xl bg-brand-blue p-8 text-brand-white md:flex-row md:items-center md:justify-between md:p-14">
           <div>
             <p className="font-bold text-brand-yellow">Vous êtes professionnel·le ?</p>
             <h2 className="mt-2 text-3xl md:text-4xl">

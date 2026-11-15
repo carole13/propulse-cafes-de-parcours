@@ -10,7 +10,16 @@ export function NextCircle({ event }: { event: EventRow | null }) {
   return (
     <section id="prochain-cercle" aria-labelledby="next-title" className="scroll-mt-24 rounded-2xl bg-brand-yellow p-6 text-brand-blue md:p-10">
       <div className="flex items-center justify-between">
-        <Badge>Prochain cercle</Badge>
+        <Badge>
+          {event && (
+            // Point qui « pulse » : un cercle est annoncé
+            <span aria-hidden="true" className="relative mr-2 flex size-2">
+              <span className="absolute inline-flex size-full rounded-full bg-brand-night opacity-60 motion-safe:animate-ping" />
+              <span className="relative inline-flex size-2 rounded-full bg-brand-night" />
+            </span>
+          )}
+          Prochain cercle
+        </Badge>
         <span className="text-sm font-extrabold tracking-wide">PRO'PULSE</span>
       </div>
       {event ? (

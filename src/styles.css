@@ -184,3 +184,73 @@
     margin: 1.5rem 0;
   }
 }
+
+/*
+ * Mouvements : discrets, et tous désactivés quand l'appareil demande de réduire les
+ * animations (réglage d'accessibilité). Sans animation, la page s'affiche normalement.
+ * - .rise          : entrée en douceur au chargement (décalage via --delay)
+ * - .spin-slow     : rotation lente du ✱
+ * - .float         : symboles qui flottent dans le hero
+ * - .marquee       : bandeau défilant (pause au survol)
+ * - .reveal        : apparition au défilement (navigateurs récents, sans JavaScript)
+ * - .underline-sweep : soulignement qui se dessine sous un mot
+ */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(6deg); }
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+@keyframes sweep {
+  from { background-size: 0% 0.09em; }
+  to { background-size: 100% 0.09em; }
+}
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(40px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.underline-sweep {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 95%;
+  background-size: 100% 0.09em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: var(--delay, 0ms);
+  }
+  .spin-slow {
+    animation: spin-slow 16s linear infinite;
+  }
+  .float {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: var(--delay, 0ms);
+  }
+  .marquee-track {
+    animation: marquee 30s linear infinite;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  .underline-sweep {
+    animation: sweep 0.9s 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+  }
+}

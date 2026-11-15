@@ -36,7 +36,7 @@ export function InstagramFeed() {
 
       <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4 lg:grid-cols-6">
         {posts.map((p) => (
-          <li key={p.id}>
+          <li key={p.id} className="reveal">
             <a
               href={p.permalink}
               target="_blank"

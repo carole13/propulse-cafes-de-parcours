@@ -77,7 +77,9 @@ function Parcours() {
             ) : (
               <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {list.map((a) => (
-                  <ArticleCard key={a.id} article={a} />
+                  <div key={a.id} className="reveal">
+                    <ArticleCard article={a} />
+                  </div>
                 ))}
               </div>
             )}

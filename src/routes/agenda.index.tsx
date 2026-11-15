@@ -126,7 +126,7 @@ function Agenda() {
         ) : (
           <ol className="mt-10 grid gap-6 md:grid-cols-2">
             {list.map((e) => (
-              <li key={e.id} className="flex">
+              <li key={e.id} className="reveal flex">
                 <div className="w-full">
                   <EventCard event={e} />
                 </div>
