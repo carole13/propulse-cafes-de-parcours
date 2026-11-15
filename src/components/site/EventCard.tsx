@@ -33,10 +33,25 @@ export function EventCard({ event }: { event: EventRow }) {
         )}
       </ul>
       {isCircle && event.speaker_name && (
-        <p className="text-sm text-brand-ink">
-          Avec <strong className="text-brand-blue">{event.speaker_name}</strong>
-          {event.speaker_role ? `, ${event.speaker_role}` : ""}
+        <p className="flex items-center gap-3 text-sm text-brand-ink">
+          {event.speaker_photo_url && (
+            <img
+              src={event.speaker_photo_url}
+              alt=""
+              width={40}
+              height={40}
+              loading="lazy"
+              className="size-10 shrink-0 rounded-full object-cover"
+            />
+          )}
+          <span>
+            Avec <strong className="text-brand-blue">{event.speaker_name}</strong>
+            {event.speaker_role ? `, ${event.speaker_role}` : ""}
+          </span>
         </p>
+      )}
+      {isCircle && event.registration === "message" && (
+        <p className="text-xs font-bold uppercase tracking-wide text-brand-ink">Places limitées · sur demande</p>
       )}
       <div className="mt-auto pt-2">
         {isCircle ? (

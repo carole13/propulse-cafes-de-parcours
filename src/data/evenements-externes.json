@@ -24,6 +24,54 @@
     "source": "https://www.sciencespo.fr/en/events/npdj-les-nouvelles-pratiques-du-journalisme-2026/"
   },
   {
+    "id": "carrefour-rp-pub-2026",
+    "title": "Carrefour des RP et de la Pub",
+    "description": "Deux sessions pour découvrir les métiers de la communication : les RP (influence et réputation) de 17h15 à 18h30, puis la pub (création, médias) de 18h15 à 19h45. Études de cas, témoignages de jeunes pros et cocktail de networking après chaque session. 20e édition.",
+    "start_at": "2026-11-24T17:15:00+01:00",
+    "location": "Auditorium WPP, 145-149 rue Anatole-France, 92300 Levallois-Perret",
+    "sector": "RP / Publicité",
+    "external_url": "https://www.udecam.fr/evenements/le-carrefour-des-rp-et-de-la-pub-revient-le-24-novembre-2026/",
+    "price": "Prix non indiqué (événement étudiant), inscription par formulaire : https://forms.gle/fgeZFe4CPMNZdWGAA",
+    "why": "Fait pour les étudiants (universités, IEP, écoles de com et de journalisme) : on y rencontre des agences et on comprend les métiers. Même soir que le cercle Pro'pulse du 24/11 à 18h30.",
+    "source": "https://www.udecam.fr/evenements/le-carrefour-des-rp-et-de-la-pub-revient-le-24-novembre-2026/ ; https://www.cbnews.fr/conseil/carrefour-rp-pub-donne-rendez-vous-aux-etudiants-24-novembre"
+  },
+  {
+    "id": "semaine-communication-debats-france-televisions-2026",
+    "title": "Semaine de la Communication : journée de débats à France Télévisions",
+    "description": "Une journée de débats sur l'IA dans la communication, la souveraineté, le retour de l'intérêt général et l'avenir des marques, avec notamment Philippe Aghion et Delphine Ernotte Cunci. L'exposition « Quand les idées prennent vie » est ouverte au public ce jour-là.",
+    "start_at": "2026-11-25T09:00:00+01:00",
+    "location": "Grand auditorium de France Télévisions, Paris 15e",
+    "sector": "Communication",
+    "external_url": "https://filiere-communication.org/semaine-communication-2026/",
+    "price": "Non indiqué, inscription sur conferences.filiere-communication.org (places limitées)",
+    "why": "Pour entendre les grandes questions du secteur en une journée, avec des intervenants de haut niveau. Horaires non publiés : 09:00 est une valeur par défaut.",
+    "source": "https://filiere-communication.org/semaine-communication-2026/ ; https://jai-un-pote-dans-la.com/semaine-de-la-communication-cinq-jours-pour-debattre-du-role-de-la-filiere-dans-la-societe/"
+  },
+  {
+    "id": "nympheas-communication-climat-2026",
+    "title": "Débat « Communication et climat » et Prix Nymphéas",
+    "description": "La communication peut-elle aider à lutter contre le réchauffement climatique ? Débat avec notamment Jean-Marc Jancovici et Jean Jouzel, suivi de la remise des Prix Nymphéas de la communication à impact positif.",
+    "start_at": "2026-11-26T18:00:00+01:00",
+    "location": "Ministère de l'Économie, Bercy, Paris 12e",
+    "sector": "Communication responsable",
+    "external_url": "https://filiere-communication.org/semaine-communication-2026/",
+    "price": "Non indiqué, inscription sur conferences.filiere-communication.org",
+    "why": "Pour les étudiants intéressés par la com responsable et les enjeux climat. Heure non publiée (« en soirée ») : 18:00 est une valeur par défaut.",
+    "source": "https://filiere-communication.org/semaine-communication-2026/ ; https://jai-un-pote-dans-la.com/semaine-de-la-communication-cinq-jours-pour-debattre-du-role-de-la-filiere-dans-la-societe/"
+  },
+  {
+    "id": "salon-studyrama-poursuite-etudes-masters-paris-2026",
+    "title": "Salon Studyrama de la poursuite d'études et des masters",
+    "description": "Écoles et universités présentent leurs formations de bac+2 à bac+6 : masters, mastères spécialisés et MBA.",
+    "start_at": "2026-12-05T10:00:00+01:00",
+    "location": "Cité internationale universitaire de Paris, 17 boulevard Jourdan, 75014 Paris",
+    "sector": "Orientation / Masters",
+    "external_url": "https://www.studyrama.com/salons/salon-studyrama-de-la-poursuite-d-etudes-apres-un-bac-32",
+    "price": "Gratuit sur inscription (édition précédente)",
+    "why": "Pour les étudiants de licence qui cherchent leur master. Horaires repris de l'édition 2025 (10h-17h) : à confirmer.",
+    "source": "https://www.eventseye.com/fairs/f-salon-studyrama-de-la-poursuite-d-etudes-et-masters-de-paris-30900-1.html ; https://diplomeo.com/actualite-salons_etudiants_decembre_2026"
+  },
+  {
     "id": "salon-letudiant-masters-ms-mba-paris-2027",
     "title": "Salon de l'Étudiant masters, mastères spécialisés et MBA",
     "description": "Salon de la poursuite d'études à bac+5 : universités et écoles présentent leurs masters, mastères spécialisés et MBA, dont des programmes en communication.",
@@ -34,5 +82,17 @@
     "price": "Gratuit sur inscription",
     "why": "Pour les étudiants de licence qui cherchent leur master en communication. Heure et adresse non publiées pour l'instant : 09:00 est une valeur par défaut.",
     "source": "https://www.letudiant.fr/etudes/salons/ville-paris.html"
+  },
+  {
+    "id": "salon-studyrama-sup-alternance-paris-2027",
+    "title": "Salon Studyrama Sup'Alternance et apprentissage",
+    "description": "Le salon des formations en alternance et en apprentissage : écoles et entreprises, conseils pour décrocher un contrat.",
+    "start_at": "2027-01-23T10:00:00+01:00",
+    "location": "Espace Champerret, Porte de Champerret, 75017 Paris",
+    "sector": "Alternance",
+    "external_url": "https://www.cci-paris-idf.fr/evenements-salons/salons-foires-paris-ile-de-france/salon-studyrama-supalternance-et-apprentissage-paris",
+    "price": "Ouvert au public (prix non indiqué)",
+    "why": "Pour trouver une formation en alternance et préparer sa recherche d'entreprise. Horaires non publiés : 10:00 est une valeur par défaut.",
+    "source": "https://www.cci-paris-idf.fr/evenements-salons/salons-foires-paris-ile-de-france/salon-studyrama-supalternance-et-apprentissage-paris ; https://www.eventseye.com/fairs/f-salon-studyrama-sup-alternance-de-paris-20661-1.html"
   }
 ]

@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { ArrowLeft, Calendar, Clock, MapPin, Users } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Lock, MapPin, Users } from "lucide-react";
 import { circleQuery } from "@/lib/queries";
 import { capitalize, formatDay, formatTime } from "@/lib/format";
 import { INSTAGRAM_URL } from "@/lib/brand";
 import { Badge, BrandSymbol } from "@/components/site/Brand";
 import { RegistrationForm } from "@/components/site/RegistrationForm";
+import { RequestSeat } from "@/components/site/RequestSeat";
 
 export const Route = createFileRoute("/agenda/$id")({
   loader: async ({ context, params }) => {
-    if (!/^[0-9a-f-]{36}$/i.test(params.id)) throw notFound();
+    if (!/^([0-9a-f-]{36}|cercle-[a-z0-9-]+)$/i.test(params.id)) throw notFound();
     const data = await context.queryClient.ensureQueryData(circleQuery(params.id));
     if (!data) throw notFound();
     return { title: data.event.title, description: data.event.description, image: data.event.image_url };
@@ -73,11 +74,22 @@ function CirclePage() {
             </div>
           )}
           {event.speaker_name && (
-            <div className="rounded-2xl bg-brand-mint p-6 text-brand-ink md:p-8">
-              <p className="text-sm font-bold uppercase tracking-wide">L'intervenant·e</p>
-              <h2 className="mt-2 text-2xl">{event.speaker_name}</h2>
-              {event.speaker_role && <p className="font-semibold">{event.speaker_role}</p>}
-              {event.speaker_bio && <p className="mt-3 leading-relaxed">{event.speaker_bio}</p>}
+            <div className="flex flex-col gap-6 rounded-2xl bg-brand-mint p-6 text-brand-ink sm:flex-row sm:items-center md:p-8">
+              {event.speaker_photo_url && (
+                <img
+                  src={event.speaker_photo_url}
+                  alt={`Portrait de ${event.speaker_name}`}
+                  width={160}
+                  height={160}
+                  className="size-32 shrink-0 rounded-full object-cover ring-4 ring-brand-white md:size-40"
+                />
+              )}
+              <div>
+                <p className="text-sm font-bold uppercase tracking-wide">L'intervenant·e</p>
+                <h2 className="mt-2 text-2xl">{event.speaker_name}</h2>
+                {event.speaker_role && <p className="font-semibold">{event.speaker_role}</p>}
+                {event.speaker_bio && <p className="mt-3 leading-relaxed">{event.speaker_bio}</p>}
+              </div>
             </div>
           )}
         </div>
@@ -87,6 +99,9 @@ function CirclePage() {
             <li className="flex gap-3"><Calendar className="size-5 shrink-0" aria-hidden="true" />{capitalize(formatDay(event.start_at))}</li>
             <li className="flex gap-3"><Clock className="size-5 shrink-0" aria-hidden="true" />{formatTime(event.start_at)}</li>
             {event.location && <li className="flex gap-3"><MapPin className="size-5 shrink-0" aria-hidden="true" />{event.location}</li>}
+            {event.registration === "message" && (
+              <li className="flex gap-3"><Lock className="size-5 shrink-0" aria-hidden="true" />Places limitées, sur demande</li>
+            )}
             {remaining !== null && (
               <li className="flex gap-3">
                 <Users className="size-5 shrink-0" aria-hidden="true" />
@@ -100,7 +115,9 @@ function CirclePage() {
       <section aria-labelledby="inscription" className="bg-brand-mist">
         <div className="container-page max-w-3xl py-12 md:py-20">
           <BrandSymbol kind="star" className="text-4xl" />
-          <h2 id="inscription" className="mt-4 text-3xl md:text-4xl">Je m'inscris</h2>
+          <h2 id="inscription" className="mt-4 text-3xl md:text-4xl">
+            {event.registration === "message" ? "Demander une place" : "Je m'inscris"}
+          </h2>
           <div className="mt-8">
             {isPast ? (
               <p className="rounded-2xl bg-brand-white p-6 text-lg font-semibold">Ce cercle a déjà eu lieu. Rendez-vous au prochain !</p>
@@ -112,6 +129,8 @@ function CirclePage() {
                 </a>
                 .
               </p>
+            ) : event.registration === "message" ? (
+              <RequestSeat />
             ) : (
               <RegistrationForm eventId={event.id} onFull={() => setForcedFull(true)} />
             )}

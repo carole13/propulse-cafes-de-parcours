@@ -33,3 +33,36 @@ Rien n'apparaît sur le site sans ce Merge. Les événements passés disparaisse
 - `start_at` : date et heure avec le décalage horaire (`+01:00` en hiver, `+02:00` en été).
 - `price`, `why` et `source` servent à la relecture ; ils ne s'affichent pas sur le site.
 - Une entrée mal formée est ignorée (le site ne casse pas), et un test le signale.
+
+# Cercles Pro'pulse gérés depuis GitHub
+
+Le fichier `cercles.json` contient les cercles organisés par l'équipe (en fuchsia dans le calendrier).
+Ils s'ajoutent aux cercles de la base Supabase et apparaissent aussi dans l'encart « Prochain cercle » de l'accueil.
+
+L'inscription y est **sur demande** : pas de formulaire, la page du cercle invite à écrire en message privé
+sur Instagram, et l'équipe choisit les participants. L'adresse exacte est envoyée aux personnes retenues.
+
+## Format d'un cercle
+
+```json
+{
+  "id": "conseil-prenom-nom-2026-11",
+  "title": "Le conseil, vu de l'intérieur",
+  "description": "Texte de présentation. \n\n crée un nouveau paragraphe.",
+  "start_at": "2026-11-24T18:30:00+01:00",
+  "location": "Un bar vers Châtelet (adresse envoyée aux participants)",
+  "sector": "Conseil",
+  "speaker": {
+    "name": "Prénom Nom",
+    "role": "Poste chez Entreprise",
+    "bio": "Une ou deux phrases.",
+    "photo": "/intervenants/prenom-nom.jpg"
+  },
+  "inscription": "message"
+}
+```
+
+- La page du cercle sera `/agenda/cercle-<id>`.
+- Photo de l'intervenant·e : la déposer dans `public/intervenants/` (carrée, environ 480 px), **avec son accord**.
+- `capacity` (facultatif) : nombre de places, affiché à titre indicatif.
+- Un cercle passé disparaît de l'agenda tout seul.

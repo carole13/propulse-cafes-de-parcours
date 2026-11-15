@@ -7,6 +7,7 @@ import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import type { Database } from "@/integrations/supabase/types";
 import { mergeEvents, upcomingExternalEvents } from "./external-events";
+import { findFileCircle, isFileCircleId, upcomingFileCircles } from "./circles-file";
 
 function publicClient() {
   const key = process.env["SUPABASE_PUBLISHABLE_KEY"]!;
@@ -41,6 +42,10 @@ export type EventRow = {
   capacity: number | null;
   external_url: string | null;
   image_url: string | null;
+  /** Photo de l'intervenant·e (cercles du fichier src/data/cercles.json). */
+  speaker_photo_url?: string | null;
+  /** « message » : inscription sur demande, sans formulaire. Absent = formulaire. */
+  registration?: "form" | "message";
 };
 export type ArticleListItem = {
   id: string;
@@ -61,7 +66,7 @@ export const listUpcomingEvents = createServerFn({ method: "GET" }).handler(asyn
     .gte("start_at", new Date().toISOString())
     .order("start_at", { ascending: true });
   if (error) console.error("listUpcomingEvents", error);
-  return mergeEvents((data ?? []) as EventRow[], upcomingExternalEvents());
+  return mergeEvents((data ?? []) as EventRow[], [...upcomingFileCircles(), ...upcomingExternalEvents()]);
 });
 
 /** Next upcoming Pro'pulse circle (or null). */
@@ -75,13 +80,24 @@ export const getNextCircle = createServerFn({ method: "GET" }).handler(async () 
     .limit(1)
     .maybeSingle();
   if (error) console.error("getNextCircle", error);
-  return (data as EventRow | null) ?? null;
+  // Le plus proche entre la base et le fichier des cercles.
+  const candidates = [data as EventRow | null, upcomingFileCircles()[0] ?? null].filter(
+    (e): e is EventRow => e !== null,
+  );
+  return candidates.sort((a, b) => a.start_at.localeCompare(b.start_at))[0] ?? null;
 });
 
 /** One circle + remaining seats (count only, via SQL function). */
 export const getCircle = createServerFn({ method: "GET" })
-  .inputValidator((d) => z.object({ id: z.string().uuid() }).parse(d))
+  .inputValidator((d) =>
+    z.object({ id: z.union([z.string().uuid(), z.string().regex(/^cercle-[a-z0-9-]+$/)]) }).parse(d),
+  )
   .handler(async ({ data }) => {
+    if (isFileCircleId(data.id)) {
+      const event = findFileCircle(data.id);
+      if (!event) return null;
+      return { event, remaining: null, isPast: new Date(event.start_at).getTime() < Date.now() };
+    }
     const sb = publicClient();
     const { data: event, error } = await sb
       .from("events")

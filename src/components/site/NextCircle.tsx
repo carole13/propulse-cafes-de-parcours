@@ -23,15 +23,32 @@ export function NextCircle({ event }: { event: EventRow | null }) {
             {[event.location, event.sector && `secteur : ${event.sector}`].filter(Boolean).join(" · ")}
           </p>
           {event.speaker_name && (
-            <p className="mt-2 text-base md:text-lg">
-              Avec <strong>{event.speaker_name}</strong>
-              {event.speaker_role ? `, ${event.speaker_role}` : ""}
+            <p className="mt-4 flex items-center gap-3 text-base md:text-lg">
+              {event.speaker_photo_url && (
+                <img
+                  src={event.speaker_photo_url}
+                  alt=""
+                  width={56}
+                  height={56}
+                  className="size-14 shrink-0 rounded-full object-cover ring-2 ring-brand-blue"
+                />
+              )}
+              <span>
+                Avec <strong>{event.speaker_name}</strong>
+                {event.speaker_role ? `, ${event.speaker_role}` : ""}
+              </span>
             </p>
           )}
           <div className="mt-8 flex flex-wrap items-end justify-between gap-6">
-            <p className="text-sm font-medium">Sans évaluation.<br />Sans compétition.</p>
+            <p className="text-sm font-medium">
+              {event.registration === "message" ? (
+                <>Petit comité.<br />Places sur demande.</>
+              ) : (
+                <>Sans évaluation.<br />Sans compétition.</>
+              )}
+            </p>
             <Link to="/agenda/$id" params={{ id: event.id }} className={buttonVariants({ size: "lg" })}>
-              Je m'inscris
+              {event.registration === "message" ? "Demander une place" : "Je m'inscris"}
             </Link>
           </div>
         </>
