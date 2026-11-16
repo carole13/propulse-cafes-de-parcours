@@ -191,7 +191,7 @@
  * - .rise          : entrée en douceur au chargement (décalage via --delay)
  * - .spin-slow     : rotation lente du ✱
  * - .float         : symboles qui flottent dans le hero
- * - .marquee       : bandeau défilant (pause au survol)
+ * - .word-in       : mot qui apparaît en fondu (bandeau « on parle sans tabou de… »)
  * - .reveal        : apparition au défilement (navigateurs récents, sans JavaScript)
  * - .underline-sweep : soulignement qui se dessine sous un mot
  */
@@ -206,8 +206,9 @@
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-14px) rotate(6deg); }
 }
-@keyframes marquee {
-  to { transform: translateX(-50%); }
+@keyframes word-in {
+  from { opacity: 0; transform: translateY(0.45em); filter: blur(4px); }
+  to { opacity: 1; transform: none; filter: none; }
 }
 @keyframes sweep {
   from { background-size: 0% 0.09em; }
@@ -237,11 +238,8 @@
     animation: float 6s ease-in-out infinite;
     animation-delay: var(--delay, 0ms);
   }
-  .marquee-track {
-    animation: marquee 30s linear infinite;
-  }
-  .marquee:hover .marquee-track {
-    animation-play-state: paused;
+  .word-in {
+    animation: word-in 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   }
   .underline-sweep {
     animation: sweep 0.9s 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;

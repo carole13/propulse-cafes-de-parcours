@@ -7,7 +7,7 @@ import { BrandSymbol, Emph } from "@/components/site/Brand";
 import { NextCircle } from "@/components/site/NextCircle";
 import { ArticleCard } from "@/components/site/ArticleCard";
 import { InstagramFeed } from "@/components/site/InstagramFeed";
-import { Marquee } from "@/components/site/Marquee";
+import { TopicRotator } from "@/components/site/TopicRotator";
 import type { CSSProperties } from "react";
 
 const delay = (ms: number) => ({ "--delay": `${ms}ms` }) as CSSProperties;
@@ -105,7 +105,7 @@ function Home() {
 
       {/* Values */}
       <section className={articles.length > 0 ? "" : "mt-16 md:mt-24"}>
-        <Marquee />
+        <TopicRotator />
         <div className="bg-brand-mint text-brand-ink">
           <div className="container-page py-16 md:py-24">
             <BrandSymbol kind="hash" className="text-5xl text-brand-blue" />
