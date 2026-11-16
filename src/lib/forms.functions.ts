@@ -70,6 +70,21 @@ export const registerToCircle = createServerFn({ method: "POST" })
       console.error("registration insert", error);
       return { ok: false, error: "Oups, l'inscription n'a pas pu être enregistrée. Réessaie dans un instant." };
     }
+    const { notifyTeam } = await import("./notify.server");
+    await notifyTeam({
+      subject: `Nouvelle inscription : ${data.firstName} ${data.lastName}`,
+      replyTo: data.email,
+      lines: [
+        "Nouvelle inscription à un cercle Pro'pulse.",
+        "",
+        `Nom : ${data.firstName} ${data.lastName}`,
+        `Email : ${data.email}`,
+        "",
+        "Pourquoi ce cercle l'intéresse :",
+        data.motivation,
+        ...(data.questions ? ["", "Questions pour l'intervenant·e :", data.questions] : []),
+      ],
+    });
     return { ok: true };
   });
 
@@ -90,5 +105,22 @@ export const sendContactMessage = createServerFn({ method: "POST" })
       console.error("contact insert", error);
       return { ok: false, error: "Oups, le message n'a pas pu être envoyé. Réessayez dans un instant." };
     }
+    const { notifyTeam } = await import("./notify.server");
+    await notifyTeam({
+      subject: `Nouveau message pro : ${data.name} (${data.companyRole})`,
+      replyTo: data.email,
+      lines: [
+        "Nouveau message reçu via le formulaire « Vous êtes pro ? » du site Pro'pulse.",
+        "",
+        `Nom : ${data.name}`,
+        `Email : ${data.email}`,
+        `Entreprise / poste : ${data.companyRole}`,
+        "",
+        "Message :",
+        data.message,
+        "",
+        "Répondre à cet e-mail écrit directement à cette personne.",
+      ],
+    });
     return { ok: true };
   });
