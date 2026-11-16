@@ -94,7 +94,6 @@ const FOR_PROS = [
   "Un petit comité d'étudiants motivés, choisis par l'équipe.",
   "Rien à préparer : vous racontez, ils posent leurs questions.",
   "Aucun enjeu de recrutement, sauf si vous le souhaitez.",
-  "Rien n'est publié sur vous sans votre accord (photo, citation, interview).",
   "On s'occupe de tout : lieu, invitations, accueil.",
 ];
 
