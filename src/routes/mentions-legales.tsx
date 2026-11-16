@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CONTACT_EMAIL, PROJECT_FRAME, PUBLICATION_DIRECTOR, SITE_URL } from "@/lib/brand";
 
 export const Route = createFileRoute("/mentions-legales")({
   head: () => ({
@@ -16,11 +17,19 @@ export const Route = createFileRoute("/mentions-legales")({
       <h1 className="text-4xl md:text-5xl">Mentions légales</h1>
       <div className="prose-propulse mt-8">
         <h2>Éditeur du site</h2>
-        <p>Pro'pulse — projet étudiant porté par [nom de l'association / de l'école], [adresse]. Contact : [email].</p>
-        <h2>Directeur·rice de la publication</h2>
-        <p>[Prénom Nom]</p>
+        <p>
+          Le site {SITE_URL.replace("https://", "")} est édité par l'équipe Pro'pulse. {PROJECT_FRAME}, à but non commercial.
+        </p>
+        <p>
+          Contact : <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+        </p>
+        <h2>Direction de la publication</h2>
+        <p>{PUBLICATION_DIRECTOR || "L'équipe Pro'pulse"}, joignable à l'adresse ci-dessus.</p>
         <h2>Hébergement</h2>
-        <p>[Nom de l'hébergeur, adresse, contact]</p>
+        <p>
+          Lovable Labs Incorporated, 1 Lincoln Street, Boston, MA 02111, États-Unis. Contact :{" "}
+          <a href="mailto:support@lovable.dev">support@lovable.dev</a>.
+        </p>
         <h2>Propriété intellectuelle</h2>
         <p>Les contenus, le logo et l'identité visuelle Pro'pulse sont protégés. Toute reproduction sans autorisation est interdite.</p>
       </div>

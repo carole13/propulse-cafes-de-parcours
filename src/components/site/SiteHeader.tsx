@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
+import { articlesQuery } from "@/lib/queries";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Brand";
 
@@ -13,6 +15,9 @@ const NAV = [
 /** Blue header with yellow logo; burger menu below md. */
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  // « Parcours » n'apparaît dans le menu qu'à partir du premier article publié.
+  const { data: articles } = useQuery(articlesQuery(1));
+  const nav = NAV.filter((item) => item.to !== "/parcours" || (articles?.length ?? 0) > 0);
   return (
     <header className="sticky top-0 z-40 bg-brand-blue text-brand-white">
       <div className="container-page flex h-16 items-center justify-between md:h-20">
@@ -22,7 +27,7 @@ export function SiteHeader() {
 
         <nav aria-label="Navigation principale" className="hidden md:block">
           <ul className="flex items-center gap-1">
-            {NAV.map((item) => (
+            {nav.map((item) => (
               <li key={item.to}>
                 <Link
                   to={item.to}
@@ -52,7 +57,7 @@ export function SiteHeader() {
       {open && (
         <nav id="mobile-menu" aria-label="Navigation mobile" className="border-t border-brand-white/20 md:hidden">
           <ul className="container-page flex flex-col py-4">
-            {NAV.map((item) => (
+            {nav.map((item) => (
               <li key={item.to}>
                 <Link
                   to={item.to}

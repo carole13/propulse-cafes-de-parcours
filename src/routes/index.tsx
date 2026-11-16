@@ -140,7 +140,7 @@ function Home() {
             <h2 className="mt-2 text-3xl md:text-4xl">
               Partagez votre <Emph className="text-brand-yellow">parcours.</Emph>
             </h2>
-            <p className="mt-3 max-w-lg text-brand-white/90">Une heure, un café, quelques étudiants curieux. C'est tout.</p>
+            <p className="mt-3 max-w-lg text-brand-white/90">Une soirée, un verre, quelques étudiants curieux. C'est tout.</p>
           </div>
           <Link to="/a-propos" hash="contact" className={buttonVariants({ variant: "yellow", size: "lg" })}>
             Nous écrire

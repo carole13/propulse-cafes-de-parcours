@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram } from "lucide-react";
-import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/brand";
+import { Instagram, Mail } from "lucide-react";
+import { CONTACT_EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL, PROJECT_FRAME } from "@/lib/brand";
 import { BrandSymbol, Logo } from "./Brand";
 
 export function SiteFooter() {
@@ -10,6 +10,7 @@ export function SiteFooter() {
         <div className="space-y-4">
           <Logo className="h-14" />
           <p className="max-w-xs text-sm text-brand-white/90">Des rencontres informelles entre étudiants et pros. Comme autour d'un café.</p>
+          <p className="max-w-sm text-xs text-brand-white/80">{PROJECT_FRAME}.</p>
         </div>
         <div className="flex flex-col gap-4 md:items-end">
           <a
@@ -20,6 +21,9 @@ export function SiteFooter() {
           >
             <Instagram className="size-5" aria-hidden="true" /> {INSTAGRAM_HANDLE}
             <span className="sr-only">(nouvel onglet)</span>
+          </a>
+          <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-2 font-bold text-brand-yellow hover:underline">
+            <Mail className="size-5" aria-hidden="true" /> {CONTACT_EMAIL}
           </a>
           <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <li><Link to="/mentions-legales" className="hover:text-brand-yellow">Mentions légales</Link></li>

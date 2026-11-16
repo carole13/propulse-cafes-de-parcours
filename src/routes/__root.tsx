@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { SITE_DESCRIPTION, SITE_TITLE } from "@/lib/brand";
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/brand";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 
@@ -85,6 +85,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: SITE_DESCRIPTION },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      // Image d'aperçu quand le lien est partagé (LinkedIn, WhatsApp, Messenger…)
+      { property: "og:image", content: `${SITE_URL}/og-propulse.jpg` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Pro'pulse : un parcours atypique peut te propulser." },
+      { name: "twitter:image", content: `${SITE_URL}/og-propulse.jpg` },
+      { property: "og:url", content: SITE_URL },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

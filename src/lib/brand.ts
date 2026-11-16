@@ -6,6 +6,21 @@ export const SITE_DESCRIPTION =
 export const INSTAGRAM_URL = "https://www.instagram.com/propulse.students/";
 export const INSTAGRAM_HANDLE = "@propulse.students";
 
+/** Adresse e-mail de contact de l'équipe, affichée sur le site. */
+export const CONTACT_EMAIL = "propulse382@gmail.com";
+
+/** Cadre du projet, affiché dans le pied de page, « À propos » et les mentions légales. */
+export const PROJECT_FRAME = "Projet étudiant du Master UNIC (communication) de l'Université Paris-Panthéon-Assas";
+
+/**
+ * Prénom et nom de la personne responsable de la publication (mentions légales).
+ * Laisser vide affiche « L'équipe Pro'pulse ».
+ */
+export const PUBLICATION_DIRECTOR = "";
+
+/** Adresse publique du site (sert aux aperçus de lien : LinkedIn, WhatsApp…). */
+export const SITE_URL = "https://propulse-students.lovable.app";
+
 /**
  * URL du flux JSON Behold qui alimente la section Instagram de l'accueil
  * (format https://feeds.behold.so/XXXXXXXX). Elle n'est pas secrète.

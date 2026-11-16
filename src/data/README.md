@@ -66,3 +66,23 @@ sur Instagram, et l'équipe choisit les participants. L'adresse exacte est envoy
 - Photo de l'intervenant·e : la déposer dans `public/intervenants/` (carrée, environ 480 px), **avec son accord**.
 - `capacity` (facultatif) : nombre de places, affiché à titre indicatif.
 - Un cercle passé disparaît de l'agenda tout seul.
+
+# L'équipe (page « À propos »)
+
+Le fichier `equipe.json` liste les membres de l'équipe affichés dans « À propos ».
+Tant qu'il est vide (`[]`), seule la présentation collective de l'équipe s'affiche.
+
+```json
+[
+  {
+    "name": "Prénom Nom",
+    "role": "Partenariats et intervenants",
+    "photo": "/equipe/prenom-nom.jpg",
+    "linkedin": "https://www.linkedin.com/in/…"
+  }
+]
+```
+
+- `photo` (facultatif) : photo carrée d'environ 480 px, déposée dans `public/equipe/`. Sans photo, l'initiale s'affiche.
+- `linkedin` (facultatif) : lien vers le profil.
+- Chacun doit être d'accord pour apparaître sur le site.
