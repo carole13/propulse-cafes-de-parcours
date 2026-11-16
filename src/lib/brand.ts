@@ -14,12 +14,12 @@ export const INSTAGRAM_HANDLE = "@propulse.students";
 export const INSTAGRAM_FEED_URL = "https://feeds.behold.so/d6GmrGXsqWXDCsxJPKgT";
 
 /**
- * Cloudflare Turnstile public site key (safe to ship in the front-end).
- * Falls back to Cloudflare's official "always passes" test key until the real one is set.
- * The SECRET key lives only on the server (TURNSTILE_SECRET_KEY).
+ * Clé PUBLIQUE Cloudflare Turnstile (widget « Site Pro'pulse »), faite pour être dans le code.
+ * Elle fonctionne avec la clé SECRÈTE, rangée uniquement dans les secrets Lovable
+ * (TURNSTILE_SECRET_KEY). Les deux doivent venir du même widget Cloudflare.
  */
 export const TURNSTILE_SITE_KEY: string =
-  (import.meta.env["VITE_TURNSTILE_SITE_KEY"] as string | undefined) || "1x00000000000000000000AA";
+  (import.meta.env["VITE_TURNSTILE_SITE_KEY"] as string | undefined) || "0x4AAAAAAGDJ2K5eRHKEdvkO";
 
 export const ARTICLE_CATEGORIES = {
   interview: "Interview",
