@@ -7,16 +7,37 @@ import { Copy, Instagram, Play } from "lucide-react";
 import { instagramQuery } from "@/lib/queries";
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/brand";
 import { buttonVariants } from "@/components/ui/button";
+import { defineCopy, useCopy } from "@/lib/i18n";
 import { Emph, Logo } from "./Brand";
+
+const COPY = defineCopy({
+  fr: {
+    eyebrow: "Instagram",
+    title: "Retrouve-nous sur",
+    onIg: "sur Instagram (nouvel onglet)",
+    kinds: { video: "Vidéo", carousel: "Carrousel", image: "Photo" },
+    newTab: "(nouvel onglet)",
+    follow: "Suivre",
+  },
+  en: {
+    eyebrow: "Instagram",
+    title: "Find us on",
+    onIg: "on Instagram (new tab)",
+    kinds: { video: "Video", carousel: "Carousel", image: "Photo" },
+    newTab: "(new tab)",
+    follow: "Follow",
+  },
+});
 
 export function InstagramFeed() {
   const { data: posts = [] } = useQuery(instagramQuery);
+  const t = useCopy(COPY);
   if (posts.length === 0) return null;
 
   return (
     <section aria-labelledby="instagram-title" className="container-page pt-16 md:pt-24">
       <h2 id="instagram-title" className="text-3xl md:text-5xl">
-        Retrouve-nous sur <Emph>Instagram</Emph>
+        {t.title} <Emph>Instagram</Emph>
       </h2>
 
       <a
@@ -30,7 +51,7 @@ export function InstagramFeed() {
         </span>
         <span className="text-lg font-extrabold group-hover:underline md:text-xl">
           {INSTAGRAM_HANDLE.replace("@", "")}
-          <span className="sr-only"> sur Instagram (nouvel onglet)</span>
+          <span className="sr-only"> {t.onIg}</span>
         </span>
       </a>
 
@@ -41,7 +62,7 @@ export function InstagramFeed() {
               href={p.permalink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative block aspect-[4/5] overflow-hidden rounded-2xl bg-brand-mist"
+              className="group relative block aspect-[4/5] overflow-hidden rounded-xl bg-brand-mist"
             >
               <img
                 src={p.imageUrl}
@@ -74,8 +95,7 @@ export function InstagramFeed() {
                 </span>
               )}
               <span className="sr-only">
-                {p.kind === "video" ? "Vidéo" : p.kind === "carousel" ? "Carrousel" : "Photo"} :{" "}
-                {p.alt} (nouvel onglet)
+                {t.kinds[p.kind]} : {p.alt} {t.newTab}
               </span>
             </a>
           </li>
@@ -88,8 +108,8 @@ export function InstagramFeed() {
         rel="noopener noreferrer"
         className={buttonVariants({ size: "lg", className: "mt-8" })}
       >
-        <Instagram aria-hidden="true" /> Suivre {INSTAGRAM_HANDLE}
-        <span className="sr-only"> (nouvel onglet)</span>
+        <Instagram aria-hidden="true" /> {t.follow} {INSTAGRAM_HANDLE}
+        <span className="sr-only"> {t.newTab}</span>
       </a>
     </section>
   );

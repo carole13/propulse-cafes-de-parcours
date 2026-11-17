@@ -53,7 +53,13 @@ export function Badge({ children, tone = "fuchsia", className }: { children: Rea
     blue: "bg-brand-blue text-brand-white",
   };
   return (
-    <span className={cn("inline-flex items-center rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide", tones[tone], className)}>
+    <span
+      className={cn(
+        "inline-flex items-center rounded-md px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.08em]",
+        tones[tone],
+        className,
+      )}
+    >
       {children}
     </span>
   );

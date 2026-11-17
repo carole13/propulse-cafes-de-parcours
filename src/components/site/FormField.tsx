@@ -1,17 +1,21 @@
 /** Accessible labelled field (input or textarea) with error + optional counter. */
 import type { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
+import { defineCopy, useCopy } from "@/lib/i18n";
+
+const COPY = defineCopy({ fr: { optional: "(facultatif)" }, en: { optional: "(optional)" } });
 
 const fieldClass =
-  "w-full rounded-2xl border-2 border-input bg-brand-white px-4 py-3 text-base text-brand-blue placeholder:text-brand-ink/60 focus:border-brand-blue focus:outline-none";
+  "w-full rounded-lg border border-input bg-brand-white px-4 py-3 text-base text-brand-blue placeholder:text-brand-ink/60 transition-shadow focus:border-brand-blue focus:outline-none focus:ring-4 focus:ring-brand-blue/15";
 
 type Common = { id: string; label: string; error?: string | undefined; optional?: boolean; hint?: string };
 
 export function TextField({ id, label, error, optional, hint, className, ...rest }: Common & InputHTMLAttributes<HTMLInputElement>) {
+  const t = useCopy(COPY);
   return (
     <div className="space-y-1.5">
-      <label htmlFor={id} className="block text-sm font-bold">
-        {label} {optional && <span className="font-normal text-brand-ink">(facultatif)</span>}
+      <label htmlFor={id} className="block text-sm font-semibold">
+        {label} {optional && <span className="font-normal text-brand-ink">{t.optional}</span>}
       </label>
       <input
         id={id}
@@ -37,10 +41,11 @@ export function TextAreaField({
   className,
   ...rest
 }: Common & TextareaHTMLAttributes<HTMLTextAreaElement> & { value: string }) {
+  const t = useCopy(COPY);
   return (
     <div className="space-y-1.5">
-      <label htmlFor={id} className="block text-sm font-bold">
-        {label} {optional && <span className="font-normal text-brand-ink">(facultatif)</span>}
+      <label htmlFor={id} className="block text-sm font-semibold">
+        {label} {optional && <span className="font-normal text-brand-ink">{t.optional}</span>}
       </label>
       <textarea
         id={id}

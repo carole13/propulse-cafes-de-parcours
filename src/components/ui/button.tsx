@@ -21,6 +21,9 @@ const buttonVariants = cva(
         white:
           "bg-brand-white text-brand-blue hover:shadow-lg motion-safe:hover:scale-[1.05] motion-safe:active:scale-[0.97]",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        // Bouton secondaire sur fond bleu (hero, bandeaux bleus)
+        outlineLight:
+          "border-2 border-brand-white/60 bg-transparent text-brand-white hover:border-brand-white hover:bg-brand-white hover:text-brand-blue motion-safe:active:scale-[0.97]",
         outline:
           "border-2 border-brand-blue bg-transparent text-brand-blue hover:bg-brand-blue hover:text-brand-white motion-safe:active:scale-[0.97]",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",

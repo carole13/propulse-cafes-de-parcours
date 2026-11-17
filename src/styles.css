@@ -18,11 +18,11 @@
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Noto Serif", Georgia, serif;
 
-  --radius-sm: calc(var(--radius) - 8px);
+  --radius-sm: calc(var(--radius) - 6px);
   --radius-md: calc(var(--radius) - 4px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-xl: calc(var(--radius) + 2px);
+  --radius-2xl: calc(var(--radius) + 4px);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -56,7 +56,7 @@
 }
 
 :root {
-  --radius: 1rem; /* 16px */
+  --radius: 0.625rem; /* 10px : cartes en 14px, plus sobre qu'avant */
 
   --brand-blue: oklch(0.565 0.214 271.5); /* #4361EE */
   --brand-yellow: oklch(0.983 0.141 110.5); /* #FFFD82 */
@@ -105,9 +105,12 @@
   h2,
   h3,
   h4 {
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 1.1;
+    line-height: 1.12;
+  }
+  h1 {
+    font-weight: 800;
   }
   :focus-visible {
     outline: 3px solid var(--ring);
@@ -122,6 +125,25 @@
   font-style: italic;
   font-weight: 500;
   letter-spacing: 0;
+  /* « Noto Serif Condensed » de la charte : version étroite de Noto Serif */
+  font-stretch: 80%;
+}
+
+/* Petit sur-titre de section : « LE CONCEPT », « POUR LES PROS »… */
+@utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  &::before {
+    content: "";
+    width: 1.5rem;
+    height: 2px;
+    background: currentColor;
+  }
 }
 
 @utility container-page {
@@ -189,8 +211,6 @@
  * Mouvements : discrets, et tous désactivés quand l'appareil demande de réduire les
  * animations (réglage d'accessibilité). Sans animation, la page s'affiche normalement.
  * - .rise          : entrée en douceur au chargement (décalage via --delay)
- * - .spin-slow     : rotation lente du ✱
- * - .float         : symboles qui flottent dans le hero
  * - .word-in       : mot qui apparaît en fondu (bandeau « on parle sans tabou de… »)
  * - .reveal        : apparition au défilement (navigateurs récents, sans JavaScript)
  * - .underline-sweep : soulignement qui se dessine sous un mot
@@ -198,13 +218,6 @@
 @keyframes rise {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: none; }
-}
-@keyframes spin-slow {
-  to { transform: rotate(360deg); }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-14px) rotate(6deg); }
 }
 @keyframes word-in {
   from { opacity: 0; transform: translateY(0.45em); filter: blur(4px); }
@@ -229,13 +242,6 @@
 @media (prefers-reduced-motion: no-preference) {
   .rise {
     animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-    animation-delay: var(--delay, 0ms);
-  }
-  .spin-slow {
-    animation: spin-slow 16s linear infinite;
-  }
-  .float {
-    animation: float 6s ease-in-out infinite;
     animation-delay: var(--delay, 0ms);
   }
   .word-in {

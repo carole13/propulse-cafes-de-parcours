@@ -8,12 +8,40 @@ import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { EventRow } from "@/lib/content.functions";
 import { capitalize } from "@/lib/format";
+import { defineCopy, useCopy, useLang, type Lang } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import { BrandSymbol } from "./Brand";
 import { EventCard } from "./EventCard";
 
+const COPY = defineCopy({
+  fr: {
+    weekdays: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+    prev: "Mois précédent",
+    next: "Mois suivant",
+    calendarOf: "Calendrier de",
+    events: (n: number) => `${n} événement${n > 1 ? "s" : ""}`,
+    circle: "Cercle Pro'pulse",
+    external: "À ne pas rater",
+    inMonth: (m: string) => `En ${m.toLowerCase()}`,
+    wholeMonth: "Voir tout le mois",
+    nothing: "Rien de prévu ce mois-ci pour l'instant.",
+    nextMonth: "Voir le mois suivant",
+  },
+  en: {
+    weekdays: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    prev: "Previous month",
+    next: "Next month",
+    calendarOf: "Calendar for",
+    events: (n: number) => `${n} event${n > 1 ? "s" : ""}`,
+    circle: "Pro'pulse circle",
+    external: "Worth attending",
+    inMonth: (m: string) => `In ${m}`,
+    wholeMonth: "See the whole month",
+    nothing: "Nothing planned this month yet.",
+    nextMonth: "See next month",
+  },
+});
+
 const TZ = "Europe/Paris";
-const WEEKDAYS = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
 
 /** "YYYY-MM-DD" of an ISO date, in Paris time. */
 function dayKey(iso: string | Date) {
@@ -28,17 +56,19 @@ const monthKey = (y: number, m: number) => `${y}-${String(m + 1).padStart(2, "0"
 const keyOf = (y: number, m: number, d: number) =>
   `${monthKey(y, m)}-${String(d).padStart(2, "0")}`;
 
-function monthLabel(y: number, m: number) {
+const loc = (lang: Lang) => (lang === "en" ? "en-GB" : "fr-FR");
+
+function monthLabel(y: number, m: number, lang: Lang) {
   return capitalize(
-    new Intl.DateTimeFormat("fr-FR", { month: "long", year: "numeric", timeZone: "UTC" }).format(
+    new Intl.DateTimeFormat(loc(lang), { month: "long", year: "numeric", timeZone: "UTC" }).format(
       new Date(Date.UTC(y, m, 1)),
     ),
   );
 }
-function dayLabel(key: string) {
+function dayLabel(key: string, lang: Lang) {
   const [y, m, d] = key.split("-").map(Number);
   return capitalize(
-    new Intl.DateTimeFormat("fr-FR", {
+    new Intl.DateTimeFormat(loc(lang), {
       weekday: "long",
       day: "numeric",
       month: "long",
@@ -48,6 +78,8 @@ function dayLabel(key: string) {
 }
 
 export function EventCalendar({ events }: { events: EventRow[] }) {
+  const lang = useLang();
+  const t = useCopy(COPY);
   const todayKey = dayKey(new Date());
   const [ty, tm] = todayKey.split("-").map(Number) as [number, number];
 
@@ -86,24 +118,24 @@ export function EventCalendar({ events }: { events: EventRow[] }) {
   return (
     <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,26rem)_1fr]">
       {/* Month grid */}
-      <div className="h-fit rounded-2xl bg-brand-white p-4 shadow-[0_0_0_2px_var(--brand-blue)] sm:p-6">
+      <div className="h-fit rounded-2xl bg-brand-white p-4 ring-1 ring-border sm:p-6">
         <div className="flex items-center justify-between">
           <button
             type="button"
             onClick={() => go(-1)}
             disabled={isCurrentMonth}
-            aria-label="Mois précédent"
+            aria-label={t.prev}
             className="inline-flex size-11 items-center justify-center rounded-full text-brand-blue hover:bg-brand-mint disabled:opacity-30 disabled:hover:bg-transparent"
           >
             <ChevronLeft className="size-6" />
           </button>
           <h2 className="text-xl md:text-2xl" aria-live="polite">
-            {monthLabel(y, m)}
+            {monthLabel(y, m, lang)}
           </h2>
           <button
             type="button"
             onClick={() => go(1)}
-            aria-label="Mois suivant"
+            aria-label={t.next}
             className="inline-flex size-11 items-center justify-center rounded-full text-brand-blue hover:bg-brand-mint"
           >
             <ChevronRight className="size-6" />
@@ -113,9 +145,9 @@ export function EventCalendar({ events }: { events: EventRow[] }) {
         <div
           className="mt-4 grid grid-cols-7 gap-1 text-center"
           role="grid"
-          aria-label={`Calendrier de ${monthLabel(y, m)}`}
+          aria-label={`${t.calendarOf} ${monthLabel(y, m, lang)}`}
         >
-          {WEEKDAYS.map((w) => (
+          {t.weekdays.map((w) => (
             <div
               key={w}
               role="columnheader"
@@ -136,7 +168,7 @@ export function EventCalendar({ events }: { events: EventRow[] }) {
             const isPast = k < todayKey;
             const isToday = k === todayKey;
             const isSelected = k === selected;
-            const label = `${dayLabel(k)}${dayEvents.length ? `, ${dayEvents.length} événement${dayEvents.length > 1 ? "s" : ""}` : ""}`;
+            const label = `${dayLabel(k, lang)}${dayEvents.length ? `, ${t.events(dayEvents.length)}` : ""}`;
             return (
               <button
                 key={k}
@@ -172,12 +204,10 @@ export function EventCalendar({ events }: { events: EventRow[] }) {
 
         <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-brand-ink">
           <li className="flex items-center gap-2">
-            <span aria-hidden="true" className="size-3.5 rounded-full bg-brand-fuchsia" /> Cercle
-            Pro'pulse
+            <span aria-hidden="true" className="size-3.5 rounded-full bg-brand-fuchsia" /> {t.circle}
           </li>
           <li className="flex items-center gap-2">
-            <span aria-hidden="true" className="size-3.5 rounded-full bg-brand-mint" /> À ne pas
-            rater
+            <span aria-hidden="true" className="size-3.5 rounded-full bg-brand-mint" /> {t.external}
           </li>
         </ul>
       </div>
@@ -186,7 +216,7 @@ export function EventCalendar({ events }: { events: EventRow[] }) {
       <div>
         <div className="flex flex-wrap items-baseline justify-between gap-3">
           <h2 className="text-2xl md:text-3xl">
-            {selected ? dayLabel(selected) : `En ${monthLabel(y, m).toLowerCase()}`}
+            {selected ? dayLabel(selected, lang) : t.inMonth(monthLabel(y, m, lang))}
           </h2>
           {selected && (
             <button
@@ -194,21 +224,20 @@ export function EventCalendar({ events }: { events: EventRow[] }) {
               onClick={() => setSelected(null)}
               className="text-sm font-bold underline underline-offset-4"
             >
-              Voir tout le mois
+              {t.wholeMonth}
             </button>
           )}
         </div>
 
         {shown.length === 0 ? (
-          <div className="mt-6 flex flex-col items-start gap-4 rounded-2xl bg-brand-mist p-8">
-            <BrandSymbol kind="face" />
-            <p className="text-lg font-bold">Rien de prévu ce mois-ci pour l'instant.</p>
+          <div className="mt-6 flex flex-col items-start gap-3 rounded-2xl bg-brand-mist p-8">
+            <p className="text-lg font-bold">{t.nothing}</p>
             <button
               type="button"
               onClick={() => go(1)}
               className="text-sm font-bold underline underline-offset-4"
             >
-              Voir le mois suivant
+              {t.nextMonth}
             </button>
           </div>
         ) : (

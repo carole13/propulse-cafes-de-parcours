@@ -21,6 +21,15 @@ const externalEventSchema = z.object({
   price: z.string().optional(),
   why: z.string().optional(),
   source: z.string().optional(),
+  /** Version anglaise facultative (affichée quand le site est en anglais). */
+  en: z
+    .object({
+      title: z.string().optional(),
+      description: z.string().optional(),
+      location: z.string().optional(),
+      sector: z.string().optional(),
+    })
+    .optional(),
 });
 
 export type ExternalEvent = z.infer<typeof externalEventSchema>;
@@ -50,6 +59,7 @@ export function parseExternalEvents(input: unknown): EventRow[] {
       capacity: null,
       external_url: e.external_url,
       image_url: null,
+      ...(e.en ? { en: e.en } : {}),
     });
   }
   return rows;

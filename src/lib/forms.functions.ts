@@ -6,7 +6,9 @@
 import { createServerFn } from "@tanstack/react-start";
 import { contactSchema, registrationSchema } from "./validation";
 
-type Result = { ok: true } | { ok: false; error: string; code?: "full" | "past" | "duplicate" | "captcha" };
+/** Le `code` permet au formulaire d'afficher le message dans la langue du site. */
+export type FormErrorCode = "full" | "past" | "duplicate" | "captcha" | "notfound" | "error";
+type Result = { ok: true } | { ok: false; error: string; code: FormErrorCode };
 
 async function verifyTurnstile(token: string): Promise<boolean> {
   const secret = process.env["TURNSTILE_SECRET_KEY"];
@@ -39,7 +41,7 @@ export const registerToCircle = createServerFn({ method: "POST" })
       .eq("id", data.eventId)
       .maybeSingle();
     if (!event || !event.published || event.type !== "propulse") {
-      return { ok: false, error: "Ce cercle est introuvable." };
+      return { ok: false, code: "notfound", error: "Ce cercle est introuvable." };
     }
     if (new Date(event.start_at).getTime() < Date.now()) {
       return { ok: false, code: "past", error: "Ce cercle a déjà eu lieu." };
@@ -68,7 +70,7 @@ export const registerToCircle = createServerFn({ method: "POST" })
         return { ok: false, code: "duplicate", error: "Tu es déjà inscrit·e à ce cercle avec cette adresse email." };
       }
       console.error("registration insert", error);
-      return { ok: false, error: "Oups, l'inscription n'a pas pu être enregistrée. Réessaie dans un instant." };
+      return { ok: false, code: "error", error: "Oups, l'inscription n'a pas pu être enregistrée. Réessaie dans un instant." };
     }
     const { notifyTeam } = await import("./notify.server");
     await notifyTeam({
@@ -103,7 +105,7 @@ export const sendContactMessage = createServerFn({ method: "POST" })
     });
     if (error) {
       console.error("contact insert", error);
-      return { ok: false, error: "Oups, le message n'a pas pu être envoyé. Réessayez dans un instant." };
+      return { ok: false, code: "error", error: "Oups, le message n'a pas pu être envoyé. Réessayez dans un instant." };
     }
     const { notifyTeam } = await import("./notify.server");
     await notifyTeam({

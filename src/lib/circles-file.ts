@@ -31,6 +31,17 @@ const circleSchema = z.object({
   capacity: z.number().int().positive().nullable().optional(),
   image: z.string().nullable().optional(),
   inscription: z.literal("message").default("message"),
+  /** Version anglaise facultative (affichée quand le site est en anglais). */
+  en: z
+    .object({
+      title: z.string().optional(),
+      description: z.string().optional(),
+      location: z.string().optional(),
+      sector: z.string().optional(),
+      speaker_role: z.string().optional(),
+      speaker_bio: z.string().optional(),
+    })
+    .optional(),
 });
 
 /** Valide la liste et ignore une entrée mal formée plutôt que de casser la page. */
@@ -60,6 +71,7 @@ export function parseFileCircles(input: unknown): EventRow[] {
       external_url: null,
       image_url: c.image ?? null,
       registration: c.inscription,
+      ...(c.en ? { en: c.en } : {}),
     });
   }
   return rows.sort((a, b) => a.start_at.localeCompare(b.start_at));

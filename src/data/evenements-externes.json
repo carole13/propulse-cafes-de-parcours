@@ -9,7 +9,12 @@
     "external_url": "https://salon-journalisme-communication-marketing-paris.salon.letudiant.fr/",
     "price": "Gratuit, invitation nominative obligatoire",
     "why": "Pour comparer les masters et écoles de communication et de journalisme en une journée, et écouter des pros et des anciens élèves raconter leurs parcours (10h-18h).",
-    "source": "https://salon-journalisme-communication-marketing-paris.salon.letudiant.fr/"
+    "source": "https://salon-journalisme-communication-marketing-paris.salon.letudiant.fr/",
+    "en": {
+      "title": "L'Étudiant fair: journalism, marketing and communication",
+      "description": "Fair for journalism, communication and marketing programmes: school and university stands, free talks, and chats with professionals and alumni.",
+      "sector": "Communication"
+    }
   },
   {
     "id": "npdj-sciences-po-2026",
@@ -21,7 +26,12 @@
     "external_url": "https://www.sciencespo.fr/en/events/npdj-les-nouvelles-pratiques-du-journalisme-2026/",
     "price": "Gratuit, inscription préalable obligatoire (Eventbrite)",
     "why": "Une soirée pour entendre des journalistes et experts parler désinformation et vérification de l'information, et réseauter au cocktail (18h-21h30).",
-    "source": "https://www.sciencespo.fr/en/events/npdj-les-nouvelles-pratiques-du-journalisme-2026/"
+    "source": "https://www.sciencespo.fr/en/events/npdj-les-nouvelles-pratiques-du-journalisme-2026/",
+    "en": {
+      "title": "New Journalism Practices (#NPDJ) 2026",
+      "description": "18th edition organised by the Sciences Po School of Journalism, on \"Interference and information integrity\": two panel discussions followed by drinks.",
+      "sector": "Journalism / Media"
+    }
   },
   {
     "id": "carrefour-rp-pub-2026",
@@ -33,7 +43,12 @@
     "external_url": "https://www.udecam.fr/evenements/le-carrefour-des-rp-et-de-la-pub-revient-le-24-novembre-2026/",
     "price": "Prix non indiqué (événement étudiant), inscription par formulaire : https://forms.gle/fgeZFe4CPMNZdWGAA",
     "why": "Fait pour les étudiants (universités, IEP, écoles de com et de journalisme) : on y rencontre des agences et on comprend les métiers. Même soir que le cercle Pro'pulse du 24/11 à 18h30.",
-    "source": "https://www.udecam.fr/evenements/le-carrefour-des-rp-et-de-la-pub-revient-le-24-novembre-2026/ ; https://www.cbnews.fr/conseil/carrefour-rp-pub-donne-rendez-vous-aux-etudiants-24-novembre"
+    "source": "https://www.udecam.fr/evenements/le-carrefour-des-rp-et-de-la-pub-revient-le-24-novembre-2026/ ; https://www.cbnews.fr/conseil/carrefour-rp-pub-donne-rendez-vous-aux-etudiants-24-novembre",
+    "en": {
+      "title": "Carrefour des RP et de la Pub (PR & advertising careers)",
+      "description": "Two sessions to discover communication careers: PR (influence and reputation) from 5:15 to 6:30 pm, then advertising (creative, media) from 6:15 to 7:45 pm. Case studies, testimonies from young professionals and networking drinks after each session. 20th edition.",
+      "sector": "PR / Advertising"
+    }
   },
   {
     "id": "semaine-communication-debats-france-televisions-2026",
@@ -45,7 +60,13 @@
     "external_url": "https://filiere-communication.org/semaine-communication-2026/",
     "price": "Non indiqué, inscription sur conferences.filiere-communication.org (places limitées)",
     "why": "Pour entendre les grandes questions du secteur en une journée, avec des intervenants de haut niveau. Horaires non publiés : 09:00 est une valeur par défaut.",
-    "source": "https://filiere-communication.org/semaine-communication-2026/ ; https://jai-un-pote-dans-la.com/semaine-de-la-communication-cinq-jours-pour-debattre-du-role-de-la-filiere-dans-la-societe/"
+    "source": "https://filiere-communication.org/semaine-communication-2026/ ; https://jai-un-pote-dans-la.com/semaine-de-la-communication-cinq-jours-pour-debattre-du-role-de-la-filiere-dans-la-societe/",
+    "en": {
+      "title": "Communication Week: day of debates at France Télévisions",
+      "description": "A day of debates on AI in communication, sovereignty, the return of the public interest and the future of brands, with speakers including Philippe Aghion and Delphine Ernotte Cunci. The exhibition \"Quand les idées prennent vie\" is open to the public that day.",
+      "location": "France Télévisions main auditorium, Paris 15th",
+      "sector": "Communication"
+    }
   },
   {
     "id": "nympheas-communication-climat-2026",
@@ -57,7 +78,13 @@
     "external_url": "https://filiere-communication.org/semaine-communication-2026/",
     "price": "Non indiqué, inscription sur conferences.filiere-communication.org",
     "why": "Pour les étudiants intéressés par la com responsable et les enjeux climat. Heure non publiée (« en soirée ») : 18:00 est une valeur par défaut.",
-    "source": "https://filiere-communication.org/semaine-communication-2026/ ; https://jai-un-pote-dans-la.com/semaine-de-la-communication-cinq-jours-pour-debattre-du-role-de-la-filiere-dans-la-societe/"
+    "source": "https://filiere-communication.org/semaine-communication-2026/ ; https://jai-un-pote-dans-la.com/semaine-de-la-communication-cinq-jours-pour-debattre-du-role-de-la-filiere-dans-la-societe/",
+    "en": {
+      "title": "\"Communication and climate\" debate and Nymphéas Awards",
+      "description": "Can communication help fight global warming? A debate featuring Jean-Marc Jancovici and Jean Jouzel, followed by the Nymphéas awards for positive-impact communication.",
+      "location": "French Ministry of the Economy, Bercy, Paris 12th",
+      "sector": "Responsible communication"
+    }
   },
   {
     "id": "salon-studyrama-poursuite-etudes-masters-paris-2026",
@@ -69,7 +96,12 @@
     "external_url": "https://www.studyrama.com/salons/salon-studyrama-de-la-poursuite-d-etudes-apres-un-bac-32",
     "price": "Gratuit sur inscription (édition précédente)",
     "why": "Pour les étudiants de licence qui cherchent leur master. Horaires repris de l'édition 2025 (10h-17h) : à confirmer.",
-    "source": "https://www.eventseye.com/fairs/f-salon-studyrama-de-la-poursuite-d-etudes-et-masters-de-paris-30900-1.html ; https://diplomeo.com/actualite-salons_etudiants_decembre_2026"
+    "source": "https://www.eventseye.com/fairs/f-salon-studyrama-de-la-poursuite-d-etudes-et-masters-de-paris-30900-1.html ; https://diplomeo.com/actualite-salons_etudiants_decembre_2026",
+    "en": {
+      "title": "Studyrama fair: further studies and Master's programmes",
+      "description": "Schools and universities present their programmes from two to six years after the baccalauréat: Master's degrees, specialised Master's and MBAs.",
+      "sector": "Study options / Master's"
+    }
   },
   {
     "id": "salon-letudiant-masters-ms-mba-paris-2027",
@@ -81,7 +113,13 @@
     "external_url": "https://www.letudiant.fr/etudes/salons/ville-paris.html",
     "price": "Gratuit sur inscription",
     "why": "Pour les étudiants de licence qui cherchent leur master en communication. Heure et adresse non publiées pour l'instant : 09:00 est une valeur par défaut.",
-    "source": "https://www.letudiant.fr/etudes/salons/ville-paris.html"
+    "source": "https://www.letudiant.fr/etudes/salons/ville-paris.html",
+    "en": {
+      "title": "L'Étudiant fair: Master's, specialised Master's and MBA",
+      "description": "Fair for postgraduate studies: universities and schools present their Master's, specialised Master's and MBA programmes, including communication programmes.",
+      "location": "Paris (address to be confirmed on L'Étudiant's website)",
+      "sector": "Study options / Master's"
+    }
   },
   {
     "id": "salon-studyrama-sup-alternance-paris-2027",
@@ -93,6 +131,11 @@
     "external_url": "https://www.cci-paris-idf.fr/evenements-salons/salons-foires-paris-ile-de-france/salon-studyrama-supalternance-et-apprentissage-paris",
     "price": "Ouvert au public (prix non indiqué)",
     "why": "Pour trouver une formation en alternance et préparer sa recherche d'entreprise. Horaires non publiés : 10:00 est une valeur par défaut.",
-    "source": "https://www.cci-paris-idf.fr/evenements-salons/salons-foires-paris-ile-de-france/salon-studyrama-supalternance-et-apprentissage-paris ; https://www.eventseye.com/fairs/f-salon-studyrama-sup-alternance-de-paris-20661-1.html"
+    "source": "https://www.cci-paris-idf.fr/evenements-salons/salons-foires-paris-ile-de-france/salon-studyrama-supalternance-et-apprentissage-paris ; https://www.eventseye.com/fairs/f-salon-studyrama-sup-alternance-de-paris-20661-1.html",
+    "en": {
+      "title": "Studyrama fair: work-study and apprenticeships",
+      "description": "The fair for work-study and apprenticeship programmes: schools and companies, plus tips to land a contract.",
+      "sector": "Work-study"
+    }
   }
 ]
