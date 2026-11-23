@@ -1,39 +1,5 @@
 [
   {
-    "id": "salon-letudiant-journalisme-communication-marketing-paris-2026",
-    "title": "Salon de l'Étudiant journalisme, marketing et communication",
-    "description": "Salon des formations en journalisme, communication et marketing : stands d'écoles et d'universités, conférences gratuites, échanges avec des professionnels et des anciens élèves.",
-    "start_at": "2026-11-07T10:00:00+01:00",
-    "location": "NEWCAP Event Center, 3 quai de Grenelle, 75015 Paris",
-    "sector": "Communication",
-    "external_url": "https://salon-journalisme-communication-marketing-paris.salon.letudiant.fr/",
-    "price": "Gratuit, invitation nominative obligatoire",
-    "why": "Pour comparer les masters et écoles de communication et de journalisme en une journée, et écouter des pros et des anciens élèves raconter leurs parcours (10h-18h).",
-    "source": "https://salon-journalisme-communication-marketing-paris.salon.letudiant.fr/",
-    "en": {
-      "title": "L'Étudiant fair: journalism, marketing and communication",
-      "description": "Fair for journalism, communication and marketing programmes: school and university stands, free talks, and chats with professionals and alumni.",
-      "sector": "Communication"
-    }
-  },
-  {
-    "id": "npdj-sciences-po-2026",
-    "title": "Les Nouvelles Pratiques du Journalisme (#NPDJ) 2026",
-    "description": "18e édition organisée par l'École de journalisme de Sciences Po, sur le thème « Ingérences et intégrité informationnelle » : deux tables rondes puis un cocktail.",
-    "start_at": "2026-11-18T18:00:00+01:00",
-    "location": "Amphithéâtre Jean Moulin, Sciences Po, 13 rue de l'Université, 75007 Paris",
-    "sector": "Journalisme / Médias",
-    "external_url": "https://www.sciencespo.fr/en/events/npdj-les-nouvelles-pratiques-du-journalisme-2026/",
-    "price": "Gratuit, inscription préalable obligatoire (Eventbrite)",
-    "why": "Une soirée pour entendre des journalistes et experts parler désinformation et vérification de l'information, et réseauter au cocktail (18h-21h30).",
-    "source": "https://www.sciencespo.fr/en/events/npdj-les-nouvelles-pratiques-du-journalisme-2026/",
-    "en": {
-      "title": "New Journalism Practices (#NPDJ) 2026",
-      "description": "18th edition organised by the Sciences Po School of Journalism, on \"Interference and information integrity\": two panel discussions followed by drinks.",
-      "sector": "Journalism / Media"
-    }
-  },
-  {
     "id": "carrefour-rp-pub-2026",
     "title": "Carrefour des RP et de la Pub",
     "description": "Deux sessions pour découvrir les métiers de la communication : les RP (influence et réputation) de 17h15 à 18h30, puis la pub (création, médias) de 18h15 à 19h45. Études de cas, témoignages de jeunes pros et cocktail de networking après chaque session. 20e édition.",
@@ -136,6 +102,24 @@
       "title": "Studyrama fair: work-study and apprenticeships",
       "description": "The fair for work-study and apprenticeship programmes: schools and companies, plus tips to land a contract.",
       "sector": "Work-study"
+    }
+  },
+  {
+    "id": "bnf-histoire-presse-voir-ou-ne-pas-voir-la-guerre-2027",
+    "title": "Histoire de la presse : « Voir ou ne pas voir la guerre »",
+    "description": "Conférence du cycle « Histoire de la presse » de la BnF, consacrée aux reporters et aux reportages sur les grands conflits du XXe siècle.",
+    "start_at": "2027-01-26T18:30:00+01:00",
+    "location": "BnF François-Mitterrand, quai François-Mauriac, 75013 Paris",
+    "sector": "Journalisme / Médias",
+    "external_url": "https://www.bnf.fr/fr/agenda/voir-ou-ne-pas-voir-la-guerre",
+    "price": "Non indiqué pour cette séance (les séances précédentes du cycle étaient gratuites, réservation conseillée)",
+    "why": "Pour les étudiants attirés par le journalisme : comprendre comment le métier de reporter de guerre s'est construit, avec des spécialistes de la presse (18h30-20h).",
+    "source": "https://www.bnf.fr/fr/agenda/histoire-de-la-presse",
+    "en": {
+      "title": "History of the press: \"To see or not to see war\"",
+      "description": "Talk in the BnF's \"History of the press\" series, on reporters and reporting from the major conflicts of the 20th century.",
+      "location": "BnF François-Mitterrand, quai François-Mauriac, Paris 13th",
+      "sector": "Journalism / Media"
     }
   }
 ]
