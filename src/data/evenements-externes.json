@@ -1,17 +1,5 @@
 [
   {
-    "id": "npdj-sciences-po-2026",
-    "title": "Les Nouvelles Pratiques du Journalisme (#NPDJ) 2026",
-    "description": "18e édition organisée par l'École de journalisme de Sciences Po, sur le thème « Ingérences et intégrité informationnelle » : deux tables rondes puis un cocktail.",
-    "start_at": "2026-11-18T18:00:00+01:00",
-    "location": "Amphithéâtre Jean Moulin, Sciences Po, 13 rue de l'Université, 75007 Paris",
-    "sector": "Journalisme / Médias",
-    "external_url": "https://www.sciencespo.fr/en/events/npdj-les-nouvelles-pratiques-du-journalisme-2026/",
-    "price": "Gratuit, inscription préalable obligatoire (Eventbrite)",
-    "why": "Une soirée pour entendre des journalistes et experts parler désinformation et vérification de l'information, et réseauter au cocktail (18h-21h30).",
-    "source": "https://www.sciencespo.fr/en/events/npdj-les-nouvelles-pratiques-du-journalisme-2026/"
-  },
-  {
     "id": "dauphine-ia-medias-information-2026",
     "title": "Table ronde « IA et médias : qui paiera encore pour l'information ? »",
     "description": "Table ronde des 5e Dauphine Digital Days avec Mélanie Loubersac, Mathieu Besson, Laurent Mauriac, Pierre Petillault et Hervé Rony, sur le modèle économique de l'information à l'heure de l'IA.",
@@ -21,7 +9,12 @@
     "external_url": "https://dauphine.psl.eu/dauphine/media-et-communication/article/ia-et-medias-qui-paiera-encore-pour-linformation",
     "price": "Prix non indiqué, inscription sur Weezevent : https://my.weezevent.com/dauphine-digital-days-ia-societe-questions-de-confiance",
     "why": "Pour comprendre comment l'IA bouscule l'économie des médias, avec des dirigeants de presse et d'organisations professionnelles (14h30-17h). Finit avant le Carrefour des RP et de la Pub et le cercle Pro'pulse du même soir.",
-    "source": "https://dauphine.psl.eu/dauphine/media-et-communication/article/ia-et-medias-qui-paiera-encore-pour-linformation"
+    "source": "https://dauphine.psl.eu/dauphine/media-et-communication/article/ia-et-medias-qui-paiera-encore-pour-linformation",
+    "en": {
+      "title": "Panel: “AI and media: who will still pay for news?”",
+      "description": "Panel at the 5th Dauphine Digital Days with media executives and industry representatives on the business model of news in the age of AI.",
+      "sector": "Journalism / Media"
+    }
   },
   {
     "id": "carrefour-rp-pub-2026",
@@ -33,7 +26,12 @@
     "external_url": "https://www.udecam.fr/evenements/le-carrefour-des-rp-et-de-la-pub-revient-le-24-novembre-2026/",
     "price": "Prix non indiqué (événement étudiant), inscription par formulaire : https://forms.gle/fgeZFe4CPMNZdWGAA",
     "why": "Fait pour les étudiants (universités, IEP, écoles de com et de journalisme) : on y rencontre des agences et on comprend les métiers. Même soir que le cercle Pro'pulse du 24/11 à 18h30.",
-    "source": "https://www.udecam.fr/evenements/le-carrefour-des-rp-et-de-la-pub-revient-le-24-novembre-2026/ ; https://www.cbnews.fr/conseil/carrefour-rp-pub-donne-rendez-vous-aux-etudiants-24-novembre"
+    "source": "https://www.udecam.fr/evenements/le-carrefour-des-rp-et-de-la-pub-revient-le-24-novembre-2026/ ; https://www.cbnews.fr/conseil/carrefour-rp-pub-donne-rendez-vous-aux-etudiants-24-novembre",
+    "en": {
+      "title": "Carrefour des RP et de la Pub (PR & advertising careers)",
+      "description": "Two sessions to discover communication careers: PR (influence and reputation) from 5:15 to 6:30 pm, then advertising (creative, media) from 6:15 to 7:45 pm. Case studies, testimonies from young professionals and networking drinks after each session. 20th edition.",
+      "sector": "PR / Advertising"
+    }
   },
   {
     "id": "semaine-communication-debats-france-televisions-2026",
@@ -45,7 +43,13 @@
     "external_url": "https://filiere-communication.org/semaine-communication-2026/",
     "price": "Non indiqué, inscription sur conferences.filiere-communication.org (places limitées)",
     "why": "Pour entendre les grandes questions du secteur en une journée, avec des intervenants de haut niveau. Horaires non publiés : 09:00 est une valeur par défaut.",
-    "source": "https://filiere-communication.org/semaine-communication-2026/ ; https://jai-un-pote-dans-la.com/semaine-de-la-communication-cinq-jours-pour-debattre-du-role-de-la-filiere-dans-la-societe/"
+    "source": "https://filiere-communication.org/semaine-communication-2026/ ; https://jai-un-pote-dans-la.com/semaine-de-la-communication-cinq-jours-pour-debattre-du-role-de-la-filiere-dans-la-societe/",
+    "en": {
+      "title": "Communication Week: day of debates at France Télévisions",
+      "description": "A day of debates on AI in communication, sovereignty, the return of the public interest and the future of brands, with speakers including Philippe Aghion and Delphine Ernotte Cunci. The exhibition \"Quand les idées prennent vie\" is open to the public that day.",
+      "location": "France Télévisions main auditorium, Paris 15th",
+      "sector": "Communication"
+    }
   },
   {
     "id": "nympheas-communication-climat-2026",
@@ -57,7 +61,13 @@
     "external_url": "https://filiere-communication.org/semaine-communication-2026/",
     "price": "Non indiqué, inscription sur conferences.filiere-communication.org",
     "why": "Pour les étudiants intéressés par la com responsable et les enjeux climat. Heure non publiée (« en soirée ») : 18:00 est une valeur par défaut.",
-    "source": "https://filiere-communication.org/semaine-communication-2026/ ; https://jai-un-pote-dans-la.com/semaine-de-la-communication-cinq-jours-pour-debattre-du-role-de-la-filiere-dans-la-societe/"
+    "source": "https://filiere-communication.org/semaine-communication-2026/ ; https://jai-un-pote-dans-la.com/semaine-de-la-communication-cinq-jours-pour-debattre-du-role-de-la-filiere-dans-la-societe/",
+    "en": {
+      "title": "\"Communication and climate\" debate and Nymphéas Awards",
+      "description": "Can communication help fight global warming? A debate featuring Jean-Marc Jancovici and Jean Jouzel, followed by the Nymphéas awards for positive-impact communication.",
+      "location": "French Ministry of the Economy, Bercy, Paris 12th",
+      "sector": "Responsible communication"
+    }
   },
   {
     "id": "entretiens-communication-publique-2026",
@@ -69,7 +79,12 @@
     "external_url": "https://www.communication-publique.fr/agenda/2026/les-entretiens-de-communication-publique-2026/",
     "price": "Prix non indiqué, inscription sur Eventbrite : https://www.eventbrite.fr/e/2004118953740",
     "why": "Pour découvrir les métiers de la communication publique (ministères, collectivités) et entendre les pros du secteur (8h45-13h45). Accès étudiant non précisé : à vérifier à l'inscription.",
-    "source": "https://www.communication-publique.fr/agenda/2026/les-entretiens-de-communication-publique-2026/"
+    "source": "https://www.communication-publique.fr/agenda/2026/les-entretiens-de-communication-publique-2026/",
+    "en": {
+      "title": "Les Entretiens 2026 de Communication publique",
+      "description": "“Speak, persuade, be accountable: public communication put to the political test.” A morning of debates run by the Communication publique association.",
+      "sector": "Public communication"
+    }
   },
   {
     "id": "salon-studyrama-poursuite-etudes-masters-paris-2026",
@@ -81,7 +96,12 @@
     "external_url": "https://www.studyrama.com/salons/salon-studyrama-de-la-poursuite-d-etudes-apres-un-bac-32",
     "price": "Gratuit sur inscription (édition précédente)",
     "why": "Pour les étudiants de licence qui cherchent leur master. Horaires repris de l'édition 2025 (10h-17h) : à confirmer.",
-    "source": "https://www.eventseye.com/fairs/f-salon-studyrama-de-la-poursuite-d-etudes-et-masters-de-paris-30900-1.html ; https://diplomeo.com/actualite-salons_etudiants_decembre_2026"
+    "source": "https://www.eventseye.com/fairs/f-salon-studyrama-de-la-poursuite-d-etudes-et-masters-de-paris-30900-1.html ; https://diplomeo.com/actualite-salons_etudiants_decembre_2026",
+    "en": {
+      "title": "Studyrama fair: further studies and Master's programmes",
+      "description": "Schools and universities present their programmes from two to six years after the baccalauréat: Master's degrees, specialised Master's and MBAs.",
+      "sector": "Study options / Master's"
+    }
   },
   {
     "id": "mediadays-paris-2026",
@@ -93,7 +113,12 @@
     "external_url": "https://www.mediadays.net/e/mediadays-paris",
     "price": "Inscription gratuite : https://www.mediadays.net/e/mediadays-paris/registration/register",
     "why": "Pour voir de près l'écosystème médias, publicité et adtech et repérer agences et régies. Événement plutôt pro, accès étudiant non mentionné. Horaires non publiés : 09:00 est une valeur par défaut.",
-    "source": "https://www.mediadays.net/e/mediadays-paris"
+    "source": "https://www.mediadays.net/e/mediadays-paris",
+    "en": {
+      "title": "MediaDays Paris 2026",
+      "description": "A day of talks on media, advertising and digital marketing, on the theme “Reconnect”.",
+      "sector": "Media / Advertising"
+    }
   },
   {
     "id": "salon-letudiant-masters-ms-mba-paris-2027",
@@ -105,7 +130,13 @@
     "external_url": "https://www.letudiant.fr/etudes/salons/ville-paris.html",
     "price": "Gratuit sur inscription",
     "why": "Pour les étudiants de licence qui cherchent leur master en communication. Heure et adresse non publiées pour l'instant : 09:00 est une valeur par défaut.",
-    "source": "https://www.letudiant.fr/etudes/salons/ville-paris.html"
+    "source": "https://www.letudiant.fr/etudes/salons/ville-paris.html",
+    "en": {
+      "title": "L'Étudiant fair: Master's, specialised Master's and MBA",
+      "description": "Fair for postgraduate studies: universities and schools present their Master's, specialised Master's and MBA programmes, including communication programmes.",
+      "location": "Paris (address to be confirmed on L'Étudiant's website)",
+      "sector": "Study options / Master's"
+    }
   },
   {
     "id": "salon-studyrama-sup-alternance-paris-2027",
@@ -117,7 +148,12 @@
     "external_url": "https://www.cci-paris-idf.fr/evenements-salons/salons-foires-paris-ile-de-france/salon-studyrama-supalternance-et-apprentissage-paris",
     "price": "Ouvert au public (prix non indiqué)",
     "why": "Pour trouver une formation en alternance et préparer sa recherche d'entreprise. Horaires non publiés : 10:00 est une valeur par défaut.",
-    "source": "https://www.cci-paris-idf.fr/evenements-salons/salons-foires-paris-ile-de-france/salon-studyrama-supalternance-et-apprentissage-paris ; https://www.eventseye.com/fairs/f-salon-studyrama-sup-alternance-de-paris-20661-1.html"
+    "source": "https://www.cci-paris-idf.fr/evenements-salons/salons-foires-paris-ile-de-france/salon-studyrama-supalternance-et-apprentissage-paris ; https://www.eventseye.com/fairs/f-salon-studyrama-sup-alternance-de-paris-20661-1.html",
+    "en": {
+      "title": "Studyrama fair: work-study and apprenticeships",
+      "description": "The fair for work-study and apprenticeship programmes: schools and companies, plus tips to land a contract.",
+      "sector": "Work-study"
+    }
   },
   {
     "id": "salon-masters-eduniversal-marketing-communication-2027",
@@ -129,6 +165,11 @@
     "external_url": "https://salon-masters.com/salon-marketing-communication",
     "price": "Gratuit sur inscription en ligne (badge QR) : https://salon-masters.com/inscription?salon=salon-marketing-communication",
     "why": "Pour les étudiants de licence qui cherchent un master en communication ou marketing : écoles et universités sur place, de 16h à 20h30.",
-    "source": "https://salon-masters.com/salon-marketing-communication"
+    "source": "https://salon-masters.com/salon-marketing-communication",
+    "en": {
+      "title": "Masters fair: marketing, communication and sales (Eduniversal)",
+      "description": "Fair for top Master's, MS, MSc and MBA programmes in marketing, communication, sales, business development and sector management (culture, luxury, sport…), full-time or work-study.",
+      "sector": "Study guidance / Master's"
+    }
   }
 ]

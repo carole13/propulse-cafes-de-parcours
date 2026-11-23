@@ -4,6 +4,7 @@
  */
 import { useEffect, useRef } from "react";
 import { TURNSTILE_SITE_KEY } from "@/lib/brand";
+import { useLang } from "@/lib/i18n";
 
 declare global {
   interface Window {
@@ -34,6 +35,7 @@ export function Turnstile({ onToken }: { onToken: (token: string | null) => void
   const ref = useRef<HTMLDivElement>(null);
   const cb = useRef(onToken);
   cb.current = onToken;
+  const lang = useLang();
 
   useEffect(() => {
     let widgetId: string | null = null;
@@ -43,7 +45,7 @@ export function Turnstile({ onToken }: { onToken: (token: string | null) => void
         if (cancelled || !ref.current || !window.turnstile) return;
         widgetId = window.turnstile.render(ref.current, {
           sitekey: TURNSTILE_SITE_KEY,
-          language: "fr",
+          language: lang,
           appearance: "interaction-only",
           callback: (t: string) => cb.current(t),
           "expired-callback": () => cb.current(null),
@@ -55,7 +57,7 @@ export function Turnstile({ onToken }: { onToken: (token: string | null) => void
       cancelled = true;
       if (widgetId && window.turnstile) window.turnstile.remove(widgetId);
     };
-  }, []);
+  }, [lang]);
 
   return <div ref={ref} className="min-h-0" />;
 }

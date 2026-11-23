@@ -46,6 +46,11 @@ export type EventRow = {
   speaker_photo_url?: string | null;
   /** « message » : inscription sur demande, sans formulaire. Absent = formulaire. */
   registration?: "form" | "message";
+  /** Version anglaise facultative des textes (fichiers de src/data). Voir src/lib/localize.ts. */
+  en?: EventTranslation;
+};
+export type EventTranslation = {
+  [K in "title" | "description" | "location" | "sector" | "speaker_role" | "speaker_bio"]?: string | undefined;
 };
 export type ArticleListItem = {
   id: string;

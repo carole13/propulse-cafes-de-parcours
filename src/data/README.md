@@ -66,3 +66,41 @@ sur Instagram, et l'équipe choisit les participants. L'adresse exacte est envoy
 - Photo de l'intervenant·e : la déposer dans `public/intervenants/` (carrée, environ 480 px), **avec son accord**.
 - `capacity` (facultatif) : nombre de places, affiché à titre indicatif.
 - Un cercle passé disparaît de l'agenda tout seul.
+
+# L'équipe (page « À propos »)
+
+Le fichier `equipe.json` liste les membres de l'équipe affichés dans « À propos ».
+Tant qu'il est vide (`[]`), seule la présentation collective de l'équipe s'affiche.
+
+```json
+[
+  {
+    "name": "Prénom Nom",
+    "role": "Partenariats et intervenants",
+    "photo": "/equipe/prenom-nom.jpg",
+    "linkedin": "https://www.linkedin.com/in/…"
+  }
+]
+```
+
+- `photo` (facultatif) : photo carrée d'environ 480 px, déposée dans `public/equipe/`. Sans photo, l'initiale s'affiche.
+- `linkedin` (facultatif) : lien vers le profil.
+- Chacun doit être d'accord pour apparaître sur le site.
+
+# Version anglaise des contenus
+
+Le site a un bouton FR / EN. Les textes de l'interface sont traduits dans le code ; pour les
+contenus de ces fichiers, on peut ajouter un bloc `"en"` facultatif (sinon le français s'affiche) :
+
+```json
+"en": {
+  "title": "Consulting, from the inside",
+  "description": "…",
+  "location": "A bar near Châtelet",
+  "sector": "Consulting",
+  "speaker_role": "Senior Consultant at Wavestone",
+  "speaker_bio": "…"
+}
+```
+
+`speaker_role` et `speaker_bio` ne concernent que les cercles (`cercles.json`).
